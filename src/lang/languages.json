@@ -1,0 +1,14 @@
+{
+  "ru": {
+    "title": "Русский",
+    "default": "true"
+  },
+  "by": {
+    "title": "Беларуски",
+    "default": "false"
+  },
+  "en": {
+    "title": "English",
+    "default": "false"
+  }
+}

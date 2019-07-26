@@ -1,11 +1,25 @@
-import React from "react";
-import { Link } from "gatsby";
+import React, { Component } from 'react';
+// import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
+// import Header from '../src/components/header';
 
 import Header from "../components/header";
 
-export default () => (
-  <div>
-    <Header />
-    <div><Link to="/architects">Link to search list of arhitectors</Link></div>
-  </div>
-);
+class indexPage extends Component {
+
+
+  render() {
+    console.log(this);
+
+    return (
+      <React.Fragment>
+        <Header />
+        <div>
+          <div><Link to="/search">Link to search list of arhitectors</Link></div>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
+export default indexPage;

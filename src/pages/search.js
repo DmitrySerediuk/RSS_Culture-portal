@@ -6,6 +6,6 @@ import Header from "../components/header";
 export default () => (
   <div>
     <Header />
-    <div><Link to="/architect/test-architect1">Test architector #1</Link></div>
+    <div><Link to="/user">Test architector #1</Link></div>
   </div>
 );
