@@ -1,19 +1,21 @@
 import React, { Component } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
 
-// import logoSrc from "../assets/images/logo.png";
+import Menu from './menu';
 
 class Header extends Component {
   render() {
-    console.log(this);
-
-    //console.log(data.allFile.edges[0].node.publicURL);
+    // console.log(this);
+    const { logoImg } = this.props;
+    const lang = this.props.lang || 'ru';
+    console.log(this.props);
     return (
       <React.Fragment>
         < header >
-          <Link to="/">
-            <img src={this.props.logoImg} alt="logo" />
+          <Link to={`${lang}/`}>
+            <img src={logoImg} alt="logo" />
           </Link>
+          <Menu lang={lang} />
         </header >
       </React.Fragment>
     );

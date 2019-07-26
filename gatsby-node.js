@@ -1,8 +1,13 @@
+// Create dinamic routes 
+//  /{lang}
+//  /{lang}/search
+//  /{lang}/search/{username}
+
 const languages = require('./src/lang/languages.json');
 const path = require('path')
 
 
-exports.createPages = ({ page, actions, graphql }) => {
+exports.createPages = async ({ page, actions, graphql }) => {
   const { createPage } = actions;
   console.log(page);
 
@@ -10,7 +15,7 @@ exports.createPages = ({ page, actions, graphql }) => {
   const indexSearchTemplate = path.resolve('./src/pages/search.js');
   const indexUserTemplate = path.resolve('./src/pages/user.js');
 
-  graphql(`{
+  await graphql(`{
     allFile(filter: {sourceInstanceName: {eq: "users"}}) {
       distinct(field: relativeDirectory)
     }
@@ -24,18 +29,8 @@ exports.createPages = ({ page, actions, graphql }) => {
             component: indexUserTemplate,
             context: {
               lang: lang,
-              test: 'test',
             }
           })
-        });
-
-        createPage({
-          path: `${lang}/test`,
-          component: indexPageTemplate,
-          context: {
-            lang: lang,
-            test: res.data.allFile.distinct,
-          }
         });
 
         createPage({
@@ -43,7 +38,6 @@ exports.createPages = ({ page, actions, graphql }) => {
           component: indexPageTemplate,
           context: {
             lang: lang,
-            test: 'test',
           }
         });
 
@@ -52,7 +46,6 @@ exports.createPages = ({ page, actions, graphql }) => {
           component: indexSearchTemplate,
           context: {
             lang: lang,
-            test: 'test',
           }
         });
       });
