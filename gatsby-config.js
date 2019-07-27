@@ -27,5 +27,12 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
+    {
+      resolve: `gatsby-plugin-i18next`,
+      options: {
+        availableLngs: ['en', 'ru', 'by'],
+        fallbackLng: 'ru',
+      },
+    },
   ],
 }

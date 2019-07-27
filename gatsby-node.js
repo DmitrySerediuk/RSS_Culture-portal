@@ -30,15 +30,6 @@ exports.createPages = ({ page, actions, graphql }) => {
         });
 
         createPage({
-          path: `${lang}/test`,
-          component: indexPageTemplate,
-          context: {
-            lang: lang,
-            test: res.data.allFile.distinct,
-          }
-        });
-
-        createPage({
           path: lang,
           component: indexPageTemplate,
           context: {
