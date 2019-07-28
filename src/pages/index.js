@@ -1,25 +1,24 @@
-import React, { Component } from 'react';
-// import { Link } from "gatsby";
-import { Link, useStaticQuery, graphql } from "gatsby";
-// import Header from '../src/components/header';
+import React from 'react';
+import { graphql } from 'gatsby';
+import { withTranslation } from 'react-i18next';
+import { Link } from 'gatsby-plugin-i18next';
+import { withI18next } from 'gatsby-plugin-i18next';
+// import { I18nextProvider } from 'react-i18next';
 
-import Header from "../components/header";
+import Layout from '../components/layout';
 
-class indexPage extends Component {
+const IndexPage = () => (
+  <Layout>
+    hello
+  </Layout>
+);
 
+export default withI18next()(IndexPage);
 
-  render() {
-    console.log(this);
-
-    return (
-      <React.Fragment>
-        <Header />
-        <div>
-          <div><Link to="/search">Link to search list of arhitectors</Link></div>
-        </div>
-      </React.Fragment>
-    );
+export const query = graphql`
+  query($lng: String!) {
+    locales: allLocale(filter: { lng: { eq: $lng }, ns: { eq: "messages" } }) {
+      ...TranslationFragment
+    }
   }
-}
-
-export default indexPage;
+`;

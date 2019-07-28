@@ -28,10 +28,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/locale`,
+        name: `locale`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-i18next`,
       options: {
         availableLngs: ['en', 'ru', 'by'],
         fallbackLng: 'ru',
+        saveMissing: true,
+        debug: true,
       },
     },
   ],
