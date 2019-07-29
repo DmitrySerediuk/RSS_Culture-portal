@@ -4,6 +4,7 @@ import { Trans } from '@lingui/react';
 import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 
 import Layout from '../components/layout';
+import MapComponent from '../components/MapComponent'
 
 const SecondPage = () => (
   <Layout>
@@ -16,6 +17,7 @@ const SecondPage = () => (
     <Link to="/">
       <Trans>Go back to the homepage</Trans>
     </Link>
+    <MapComponent/>
   </Layout>
 );
 
