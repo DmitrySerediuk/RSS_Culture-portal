@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from "gatsby";
 
 import Header from "../components/header";
-import ArchitectList from "../components/ArchitectList"
+import Content from '../components/index/content';
+import 'normalize.css';
+
+
 class indexPage extends Component {
-
-
   render() {
-    console.log(this);
     const { lang } = this.props.pageContext;
-
     return (
-      <React.Fragment>
-        <Header lang={lang} />
-        <ArchitectList/>
-      </React.Fragment>
+      <Fragment>
+          <Header lang={lang} />
+          <Content />
+      </Fragment>
     );
   }
 }

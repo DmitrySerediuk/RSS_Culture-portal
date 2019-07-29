@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
+import Button from '@material-ui/core/Button';
 
 class Menu extends Component {
 
   render() {
     const { lang } = this.props;
     return (
-      <React.Fragment>
-        <ul>
-          <li><Link to={`/${lang}`}>Home</Link></li>
-          <li><Link to={`/${lang}/search`}>Search</Link></li>
-        </ul>
-      </React.Fragment >
+        <div className="nav">        
+          <Button variant="contained" color="primary" className="nav-btn">
+            <Link to={`/${lang}`} className="header-link">Home</Link>
+          </Button>
+          <Button variant="contained" color="primary" className="nav-btn">
+            <Link to={`/${lang}`} className="header-link">Search</Link>
+          </Button>
+        </div>
     );
   };
 }
