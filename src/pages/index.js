@@ -8,7 +8,6 @@ import 'normalize.css';
 
 class indexPage extends Component {
   render() {
-    // console.log(this);
     const { lang } = this.props.pageContext;
     return (
       <Fragment>
