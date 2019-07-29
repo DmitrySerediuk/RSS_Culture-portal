@@ -8,26 +8,19 @@ import 'normalize.css';
 
 import Layout from '../components/layout';
 import React, { Component, Fragment } from 'react';
-import { Link } from "gatsby";
-
-
-//const IndexPage = () => (
-//  <Layout>
-//    <Trans>Hi people</Trans>
-//  </Layout>
-//);
 
 class indexPage extends Component {
   render() {
-    const { lang } = this.props.pageContext;
     return (
-      <Fragment>
-          <Header lang={lang} />
-          <Content />
-      </Fragment>
-    );
+      <Layout>
+        <Trans>Hi people</Trans>
+        <Content />
+      </Layout>
+    )
+  };
+}
 
-export default withLingui()(IndexPage);
+export default withLingui()(indexPage);
 
 export const query = graphql`
   query($lng: String!, $fallbackLng: String!) {
