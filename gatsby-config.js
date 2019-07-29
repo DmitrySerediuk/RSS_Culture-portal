@@ -39,7 +39,7 @@ module.exports = {
       options: {
         availableLngs: ['en', 'by', 'ru'],
         fallbackLng: 'en',
-        siteUrl: 'https://www.example.com/',
+        siteUrl: 'http://sochi-rio.ru/1/',
       },
     },
   ],

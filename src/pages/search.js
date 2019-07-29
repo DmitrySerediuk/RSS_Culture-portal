@@ -4,6 +4,7 @@ import { Trans } from '@lingui/react';
 import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 
 import Layout from '../components/layout';
+import ArchitectList from "../components/architectList"
 
 const IndexPage = () => (
   <Layout>
@@ -11,9 +12,7 @@ const IndexPage = () => (
       <Trans>Hi people</Trans>
     </h1>
 
-    <Link to="/user/">
-      <Trans>Go to user</Trans>
-    </Link>
+    <ArchitectList />
   </Layout>
 );
 

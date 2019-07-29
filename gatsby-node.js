@@ -1,4 +1,4 @@
-onst languages = require('./src/locale/languages.json');
+//const languages = require('./src/locale/languages.json');
 const path = require('path')
 
 
