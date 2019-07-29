@@ -1,0 +1,18 @@
+{
+  "header": {
+    "title": "1Alesia Ivankova",
+    "About me": "About me",
+    "Writing": "Writing",
+    "Blog": "Blog",
+    "Contact": "Contact"
+  },
+  "Gatsby I18next": "En",
+  "Go back to the homepage": "Go back to the homepage",
+  "Go to page 2": "Go to page 2",
+  "Hi from the second page": "Hi from the second page",
+  "Hi people": "Hi people",
+  "Now go build something great.": "Now go build something great.",
+  "Welcome to page 2": "Welcome to page 2",
+  "Welcome to your new Gatsby site.": "Welcome to your new Gatsby site.",
+  "This is Gatsby with I18next": "EN"
+}

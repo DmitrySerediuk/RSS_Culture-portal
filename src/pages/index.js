@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
-import { Link } from "gatsby";
+import React from 'react';
+import { graphql } from 'gatsby';
+import { Trans } from '@lingui/react';
+import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 
-import Header from "../components/header";
+import Layout from '../components/layout';
 import ArchitectList from "../components/ArchitectList"
-class indexPage extends Component {
 
 
-  render() {
-    console.log(this);
-    const { lang } = this.props.pageContext;
+const IndexPage = () => (
+  <Layout>
+    <Trans>Hi people</Trans>
+     <ArchitectList/>
+  </Layout>
+);
 
-    return (
-      <React.Fragment>
-        <Header lang={lang} />
-        <ArchitectList/>
-      </React.Fragment>
-    );
-  }
-}
+export default withLingui()(IndexPage);
 
-export default indexPage;
