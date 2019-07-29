@@ -6,6 +6,7 @@ import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 import Layout from '../components/layout';
 import ArchitectList from "../components/architectList"
 
+
 const IndexPage = () => (
   <Layout>
     <h1>

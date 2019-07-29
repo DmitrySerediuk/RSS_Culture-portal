@@ -1,23 +1,28 @@
 import React, { Component } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
-
+import './header.css';
 import Menu from './menu';
+import Lang from './lang';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+
 
 class Header extends Component {
   render() {
-    // console.log(this);
-    const { logoImg } = this.props;
+    // const { logoImg } = this.props;
     const lang = this.props.lang || 'ru';
-    console.log(this.props);
     return (
-      <React.Fragment>
-        < header >
-          <Link to={`${lang}/`}>
-            <img src={logoImg} alt="logo" />
-          </Link>
-          <Menu lang={lang} />
-        </header >
-      </React.Fragment>
+        <div className="header-wrapper">
+          <Container maxWidth="md">
+            <Typography variant="h1" className="header-title" style={{fontSize: '2rem'}} >
+                <Link to={`${lang}/`} className="link">
+                  Architects of Belarus
+                </Link>
+            </Typography>
+            <Lang />
+            <Menu lang={lang} />
+          </Container>
+        </div>
     );
   }
 }
