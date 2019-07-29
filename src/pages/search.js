@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "gatsby";
 import Header from "../components/header";
+import Search from "../components/search";
 
 export default () => (
-  <div>
-    <Header />
-    <div><Link to="/user">Test architector #1</Link></div>
-  </div>
+    <Fragment>
+      <Header />
+      <Search />
+    </Fragment>
 );

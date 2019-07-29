@@ -1,22 +1,41 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "gatsby";
-import Button from '@material-ui/core/Button';
+import { Button, Toolbar } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
-class Menu extends Component {
 
-  render() {
-    const { lang } = this.props;
+const useStyles = makeStyles(theme => ({
+	  nav: {
+      display: 'grid',
+      gridTemplateColumns: 'auto auto',
+      gridGap: '30px',
+      justifyContent: 'center',
+      margin: '0 auto',
+      padding: '0 0 10px 0'
+    },
+    navBtn: { 
+      width: '6rem',
+      color: '#ffffff'
+    },
+    headerLink: {
+      textDecoration: 'none',
+      color: '#ffffff'
+    }
+}));
+
+const NavBar = (props) => {
+    const { lang } = props;
+    const classes = useStyles();
     return (
-        <div className="nav">        
-          <Button variant="contained" color="primary" className="nav-btn">
-            <Link to={`/${lang}`} className="header-link">Home</Link>
-          </Button>
-          <Button variant="contained" color="primary" className="nav-btn">
-            <Link to={`/${lang}`} className="header-link">Search</Link>
-          </Button>
-        </div>
+        <Toolbar className={classes.nav}>     
+            <Button variant="contained" color="primary" className={classes.navBtn}>
+              <Link to={`/`} className={classes.headerLink}>Home</Link>
+            </Button>
+            <Button variant="contained" color="primary" className={classes.navBtn}>
+              <Link to={`/search`} className={classes.headerLink}>Search</Link>
+            </Button>
+        </Toolbar>
     );
-  };
 }
 
-export default Menu;
+export default NavBar;

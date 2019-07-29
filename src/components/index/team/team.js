@@ -1,11 +1,30 @@
 import React from 'react';
 import Participant from './participant';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import './team.css';
+import { Typography, Container, List, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+	team: {
+		backgroundColor: theme.palette.background.paper,
+        margin: '20px 0',
+        padding: '0'
+    },
+    participantsList: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
+        gridTemplateRows: 'auto',
+        gridGap: '20px',
+        padding: '0'
+    },
+    title: {
+        textAlign: 'center',
+		margin: '20px 0'
+    }
+}));
 
 const Team = () => {
     // Need to put in data
+    const classes = useStyles();
     const participants = [
         {
             id: 1,
@@ -50,15 +69,18 @@ const Team = () => {
         });
 
     return (
-        <Container>
-            <div className="team">
-                <Typography variant="h4" color="inherit" style={{textAlign: 'center'}}>
-                    Our team
-                </Typography>
-                <ul className="participants-list">
-                     {listOfParticipants}
-                </ul>
-            </div>
+        <Container maxWidth="md" className={classes.team}>
+            <Typography variant="h4" color="inherit" className={classes.title}>
+                Our team
+            </Typography>
+            {/* <Grid container>
+                <List className={classes.participantsList}>
+                    {listOfParticipants}
+                </List>
+            </Grid> */}
+            <List className={classes.participantsList}>
+                {listOfParticipants}
+            </List>
         </ Container>
     )
 }

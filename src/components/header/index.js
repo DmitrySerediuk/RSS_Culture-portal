@@ -1,30 +1,45 @@
 import React, { Component } from "react";
 import { Link, StaticQuery, graphql } from "gatsby";
-import './header.css';
-import Menu from './menu';
+import { makeStyles } from '@material-ui/core/styles';
+import { Container, Typography } from '@material-ui/core';
+import NavBar from './menu';
 import Lang from './lang';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
 
 
-class Header extends Component {
-  render() {
+const useStyles = makeStyles(theme => ({
+  headerWrapper: {
+    width: '100%',
+    boxShadow: '2px 2px 2px #000000',
+    background: 'linear-gradient(90deg,#898989, #444444, #898989)',
+    position: 'relative'
+  },
+  headerTitle: {
+    fontSize: '2rem',
+    textAlign: 'center',
+    padding: '27px 0'
+  },
+  homeLink: {
+    textDecoration: 'none',
+    color: '#ffffff'
+  }
+}));
+
+const Header = (props) => { 
+    const classes = useStyles();
     // const { logoImg } = this.props;
-    const lang = this.props.lang || 'ru';
+    
+    const lang = props.lang || 'ru';
     return (
-        <div className="header-wrapper">
-          <Container maxWidth="md">
-            <Typography variant="h1" className="header-title" style={{fontSize: '2rem'}} >
-                <Link to={`${lang}/`} className="link">
+          <Container maxWidth={false} className={classes.headerWrapper}>
+            <Typography variant="h1" className={classes.headerTitle} >
+                <Link to={`${lang}/`} className={classes.homeLink}>
                   Architects of Belarus
                 </Link>
             </Typography>
-            <Lang />
-            <Menu lang={lang} />
+            <Lang lang={lang}/>
+            <NavBar lang={lang} />
           </Container>
-        </div>
     );
-  }
 }
 
 export default () => (
