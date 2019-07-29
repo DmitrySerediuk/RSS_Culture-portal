@@ -1,24 +1,35 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { withTranslation } from 'react-i18next';
-import { Link } from 'gatsby-plugin-i18next';
-import { withI18next } from 'gatsby-plugin-i18next';
-// import { I18nextProvider } from 'react-i18next';
+import { Trans } from '@lingui/react';
+import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 
 import Layout from '../components/layout';
 
 const IndexPage = () => (
   <Layout>
-    hello
+    <h1>
+      <Trans>Hi people</Trans>
+    </h1>
+    <p>
+      <Trans>Welcome to your new Gatsby site.</Trans>
+    </p>
+    <p>
+      <Trans>Now go build something great.</Trans>
+    </p>
+    <Link to="/search/">
+      <Trans>Go to page 2</Trans>
+    </Link>
   </Layout>
 );
 
-export default withI18next()(IndexPage);
+export default withLingui()(IndexPage);
 
 export const query = graphql`
-  query($lng: String!) {
-    locales: allLocale(filter: { lng: { eq: $lng }, ns: { eq: "messages" } }) {
-      ...TranslationFragment
+  query($lng: String!, $fallbackLng: String!) {
+    locales: allLocale(
+      filter: { lng: { in: [$lng, $fallbackLng] }, ns: { eq: "messages" } }
+    ) {
+      ...LocaleFragment
     }
   }
 `;

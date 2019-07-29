@@ -30,17 +30,16 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/locale`,
+        path: `${__dirname}/locale`,
         name: `locale`,
       },
     },
     {
-      resolve: `gatsby-plugin-i18next`,
+      resolve: '@wapps/gatsby-plugin-lingui',
       options: {
-        availableLngs: ['en', 'ru', 'by'],
-        fallbackLng: 'ru',
-        saveMissing: true,
-        debug: true,
+        availableLngs: ['en', 'by', 'ru'],
+        fallbackLng: 'en',
+        siteUrl: 'https://www.example.com/',
       },
     },
   ],

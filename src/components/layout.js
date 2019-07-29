@@ -1,21 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
-import { Head } from 'gatsby-plugin-i18next';
+import { withI18n } from '@lingui/react';
+import { Head } from '@wapps/gatsby-plugin-lingui';
 
-import './i18next';
-import Header from './header';
+import Header from './localization/header';
 
-
-
-const Layout = ({ children, data, t }) => (
+const Layout = ({ children, i18n }) => (
   <>
     <Head hreflang>
-      <title>{t('Validate')}</title>
+      <title>{i18n.t`Gatsby Starter Lingui`}</title>
       <meta name="description" content="Sample" />
-      <meta name="keywords" content="gatsby, react, wapps, i18next" />
+      <meta name="keywords" content="gatsby, react, wapps, lingui" />
     </Head>
-    <Header siteTitle={t('Gatsby Starter I18next')} />
+    <Header siteTitle={i18n.t`Gatsby Starter Lingui`} />
     <div
       style={{
         margin: '0 auto',
@@ -33,4 +30,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default withTranslation()(Layout);
+export default withI18n()(Layout);
