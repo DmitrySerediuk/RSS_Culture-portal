@@ -24,7 +24,6 @@
     "gatsby-source-contentful": "^2.1.15",
     "gatsby-source-filesystem": "^2.1.6",
     "gatsby-source-graphql": "^2.1.3",
-    "google-map-react": "^1.1.4",
     "i18n": "^0.8.3",
     "i18next": "^17.0.6",
     "i18next-browser-languagedetector": "^3.0.1",
@@ -35,7 +34,8 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-i18next": "^10.11.4",
-    "typeface-roboto": "0.0.75"
+    "typeface-roboto": "0.0.75",
+    "yandex-map-react": "^1.1.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
