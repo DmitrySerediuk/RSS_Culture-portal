@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "gatsby";
 
 import Header from "../components/header";
+import VideoModal from '../components/architectPage/video/videoContainer'
 
 class indexPage extends Component {
 
@@ -13,6 +14,7 @@ class indexPage extends Component {
     return (
       <React.Fragment>
         <Header lang={lang} />
+        <VideoModal/>
       </React.Fragment>
     );
   }
