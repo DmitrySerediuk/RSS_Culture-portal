@@ -1,10 +1,30 @@
-import React from "react";
-import { Link } from "gatsby";
-import Header from "../components/header";
+import React from 'react';
+import { graphql } from 'gatsby';
+import { Trans } from '@lingui/react';
+import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 
-export default () => (
-  <div>
-    <Header />
-    <div><Link to="/user">Test architector #1</Link></div>
-  </div>
+import Layout from '../components/layout';
+import ArchitectList from "../components/architectList"
+
+
+const IndexPage = () => (
+  <Layout>
+    <h1>
+      <Trans>Hi people</Trans>
+    </h1>
+
+    <ArchitectList />
+  </Layout>
 );
+
+export default withLingui()(IndexPage);
+
+export const query = graphql`
+  query($lng: String!, $fallbackLng: String!) {
+    locales: allLocale(
+      filter: { lng: { in: [$lng, $fallbackLng] }, ns: { eq: "messages" } }
+    ) {
+      ...LocaleFragment
+    }
+  }
+`;

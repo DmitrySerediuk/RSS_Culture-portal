@@ -1,10 +1,21 @@
-import React, { Component, Fragment } from 'react';
-import { Link } from "gatsby";
+import { graphql } from 'gatsby';
+import { Trans } from '@lingui/react';
+import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 
 import Header from "../components/header";
 import Content from '../components/index/content';
 import 'normalize.css';
 
+import Layout from '../components/layout';
+import React, { Component, Fragment } from 'react';
+import { Link } from "gatsby";
+
+
+//const IndexPage = () => (
+//  <Layout>
+//    <Trans>Hi people</Trans>
+//  </Layout>
+//);
 
 class indexPage extends Component {
   render() {
@@ -15,7 +26,15 @@ class indexPage extends Component {
           <Content />
       </Fragment>
     );
-  }
-}
 
-export default indexPage;
+export default withLingui()(IndexPage);
+
+export const query = graphql`
+  query($lng: String!, $fallbackLng: String!) {
+    locales: allLocale(
+      filter: { lng: { in: [$lng, $fallbackLng] }, ns: { eq: "messages" } }
+    ) {
+      ...LocaleFragment
+    }
+  }
+`;
