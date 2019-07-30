@@ -39,28 +39,27 @@ const useStyles = makeStyles(theme => ({
 
 const architectOfTheDay = (props) => {
     const classes = useStyles();
-    // For example
-    const url = "https://grnkvch.github.io/CodeJam-Culture-Portal/static/baklanov-e8c0f280f4b86d29526072e70c9ee431.jpg";
+    const { imageSrc,  initials,  yearsOfLife,  desc} = props.architectOfTheDay;
     return (
             <Container className={classes.architectOfTheDay}>               
                 <Typography  variant="h5" className={classes.title}> 
-                    Architector of the day
+                    Architect of the day
                 </Typography>             
                 <Grid container>
                     <Grid item className={classes.infoWrapper}>
                         <Grid item className={classes.item}>
                             <Typography  variant="h6">
-                                Mikhail Ivanovich Baklanov
+                               {initials}
                             </Typography>
                         </Grid>
                         <Grid item className={classes.item}>
                             <Typography  variant="body1">
-                                January 30 (February 12) - January 23, 1990
+                               {yearsOfLife}
                             </Typography>
                         </Grid>
                         <Grid item className={classes.item}>
                             <Typography  variant="body2">
-                                Belarusian Soviet architect. Honored Architect of the Belorussian SSR (1969).
+                               {desc}
                             </Typography>
                         </Grid>
                         <Grid item  className={classes.item}>
@@ -72,7 +71,7 @@ const architectOfTheDay = (props) => {
                         </Grid>
                     </Grid>                    
                     <Grid item className={classes.architectImageWrapper}>
-                        <img alt="architect" src={url} style={{width: '150px'}} />
+                        <img alt="architect" src={imageSrc} style={{width: '150px'}} />
                     </Grid>
                 </Grid>
         </Container>

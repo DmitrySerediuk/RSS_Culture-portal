@@ -23,7 +23,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Team = () => {
-    // Need to put in data
     const classes = useStyles();
     const participants = [
         {
@@ -73,15 +72,11 @@ const Team = () => {
             <Typography variant="h4" color="inherit" className={classes.title}>
                 Our team
             </Typography>
-            {/* <Grid container>
-                <List className={classes.participantsList}>
-                    {listOfParticipants}
-                </List>
-            </Grid> */}
             <List className={classes.participantsList}>
                 {listOfParticipants}
             </List>
         </ Container>
     )
 }
+
 export default Team;

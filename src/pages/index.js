@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from "gatsby";
 import Header from "../components/header";
-import Content from '../components/index/content';
+import StartPage from '../components/index';
 import 'normalize.css';
-
+import 'typeface-roboto';
 
 class indexPage extends Component {
   render() {
@@ -11,7 +11,7 @@ class indexPage extends Component {
     return (
       <Fragment>
           <Header lang={lang} />
-          <Content />
+          <StartPage />
       </Fragment>
     );
   }

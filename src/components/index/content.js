@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Description from './description/description';
 import ArchtitectOfTheDay from './architectOfTheDay/architectOfTheDay';
 import Team from './team/team';
-import { Container } from '@material-ui/core';
 
-const Content = () => {
+const Content = (props) => {
+    const {architectOfTheDay} = props.data;
+    console.log(architectOfTheDay);
     return (
-            <Container maxWidth="md">
+            <Fragment>
                 <Description />
-                <ArchtitectOfTheDay />
+                <ArchtitectOfTheDay architectOfTheDay={architectOfTheDay}/>
                 <Team />
-            </Container>           
+            </Fragment>           
     )
 }
 

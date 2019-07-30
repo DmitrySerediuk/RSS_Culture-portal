@@ -3,9 +3,10 @@ import { Link } from "gatsby";
 import Header from "../components/header";
 import Search from "../components/search";
 
-export default () => (
+const searchPage = () => (
     <Fragment>
       <Header />
       <Search />
     </Fragment>
 );
+export default searchPage;

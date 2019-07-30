@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Link } from "gatsby";
-
+import Person from '../components/person';
 import Header from "../components/header";
+import 'typeface-roboto';
 
-export default () => (
-  <div>
-    <Header />
-    <div>Information about architector #1</div>
-  </div>
+const userPage = () => (
+  <Fragment>
+      <Header />
+      <Person />
+  </Fragment>
 );
+export default userPage;

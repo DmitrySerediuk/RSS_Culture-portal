@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
-
 import List from '@material-ui/core/List';
-
 import ArchitectItem from './ArchitectItem';
 import SearchInput from './SearchInput';
 
 const useStyles = makeStyles(theme => ({
 	root: {
-		// width: '90%',
-		// maxWidth: 1000,
 		backgroundColor: theme.palette.background.paper,
 		margin: '20px 0'
 	},
