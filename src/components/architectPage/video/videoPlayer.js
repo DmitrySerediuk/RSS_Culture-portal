@@ -25,6 +25,7 @@ const classes = useStyles();
         <ReactPlayer
           url='https://www.youtube.com/watch?time_continue=6&v=6mUgWtHkQFY'
           className={classes.reactPlayer}
+          controls = 'true'
           playing
           width='100%'
           height='100%'
