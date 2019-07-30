@@ -1,10 +1,12 @@
 import React from 'react';
-import Participant from './participant';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import { withI18n } from '@lingui/react';
+
+import Participant from './participant';
 import './team.css';
 
-const Team = () => {
+const Team = ({ i18n }) => {
     // Need to put in data
     const participants = [
         {
@@ -19,19 +21,19 @@ const Team = () => {
             initials: 'Aliaksei Yukhnevich',
             link: 'alexyukhnevich',
         },
-        {   
+        {
             id: 3,
             image: 'https://avatars0.githubusercontent.com/u/43389428?s=460&v=4',
             initials: 'Bogdan Tsviatkou',
             link: 'getbodya',
         },
-        {   
+        {
             id: 4,
             image: 'https://avatars1.githubusercontent.com/u/22011726?s=460&v=4',
             initials: 'Konstantin Krylovich',
-            link:'konstantinkrylovich',
+            link: 'konstantinkrylovich',
         },
-        {   
+        {
             id: 5,
             image: 'https://avatars3.githubusercontent.com/u/22956432?s=460&v=4',
             initials: 'Maria Larchenko',
@@ -40,26 +42,27 @@ const Team = () => {
     ];
     // Create a list of developers
     const listOfParticipants = participants.map(participant => {
-        const {id, image, initials, link} = participant;
-        return <Participant 
-                    key={id}
-                    image={image}
-                    initials={initials}
-                    link={link}
-                />
-        });
+        const { id, image, initials, link } = participant;
+        return <Participant
+            key={id}
+            image={image}
+            initials={initials}
+            link={link}
+        />
+    });
 
     return (
         <Container>
             <div className="team">
-                <Typography variant="h4" color="inherit" style={{textAlign: 'center'}}>
-                    Our team
+                <Typography variant="h4" color="inherit" style={{ textAlign: 'center' }}>
+                    {i18n.t`MAIN__OUR-TEAM`}
                 </Typography>
                 <ul className="participants-list">
-                     {listOfParticipants}
+                    {listOfParticipants}
                 </ul>
             </div>
         </ Container>
     )
 }
-export default Team;
+
+export default withI18n()(Team);

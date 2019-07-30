@@ -2,6 +2,7 @@ import React from 'react';
 import { Language } from '@wapps/gatsby-plugin-lingui';
 import { Typography } from '@material-ui/core';
 
+
 const Switcher = ({ changeLng, lng, availableLngs }) => {
 
     return (

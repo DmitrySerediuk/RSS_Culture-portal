@@ -8,11 +8,11 @@ import Header from './header';
 const Layout = ({ children, i18n }) => (
   <>
     <Head hreflang>
-      <title>{i18n.t`Gatsby Starter Lingui`}</title>
-      <meta name="description" content="Sample" />
-      <meta name="keywords" content="gatsby, react, wapps, lingui" />
+      <title>{i18n.t`TITLE__MAIN`}</title>
+      <meta name="description" content={i18n.t`DESCRIPTION__MAIN`} />
+      <meta name="keywords" content={i18n.t`KEYWORDS__MAIN`} />
     </Head>
-    <Header siteTitle={i18n.t`Gatsby Starter Lingui`} />
+    <Header siteTitle={i18n.t`TITLE__MAIN`} />
     <div>
       {children}
     </div>

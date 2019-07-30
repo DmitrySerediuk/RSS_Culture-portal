@@ -10,7 +10,7 @@ import ArchitectList from "../components/architectList"
 const IndexPage = () => (
   <Layout>
     <h1>
-      <Trans>Hi people</Trans>
+      <Trans>SEARCH__TITLE</Trans>
     </h1>
 
     <ArchitectList />

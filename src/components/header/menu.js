@@ -11,10 +11,10 @@ class Menu extends Component {
     return (
       <div className="nav">
         <Button variant="contained" color="primary" className="nav-btn">
-          <Link to='/' className="header-link">{i18n.t`Main`}</Link>
+          <Link to='/' className="header-link">{i18n.t`HEADER__MENU--MAIN`}</Link>
         </Button>
         <Button variant="contained" color="primary" className="nav-btn">
-          <Link to='/search/' className="header-link">{i18n.t`List of architects`}</Link>
+          <Link to='/search/' className="header-link">{i18n.t`HEADER__MENU--SEARCH`}</Link>
         </Button>
       </div>
     );
