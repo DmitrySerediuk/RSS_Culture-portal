@@ -5,9 +5,10 @@ import Content from '../components/index/content';
 import 'normalize.css';
 
 import Layout from '../components/layout';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 class indexPage extends Component {
+  
   render() {
     return (
       <Layout>

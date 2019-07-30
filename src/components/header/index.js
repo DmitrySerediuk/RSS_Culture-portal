@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, StaticQuery, graphql } from "gatsby";
+import { Link } from '@wapps/gatsby-plugin-lingui';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import { withI18n } from '@lingui/react';
