@@ -48,13 +48,6 @@ export default class Gallery extends React.Component {
             height: '50%',
         }
         }
-
-        //    const image = document.querySelector('.image-gallery-slide img');
-        //    image.style.height = '100px';
-        // [].map.call(image, (img) =>{
-        //     img.style.height = '100px';
-        // });
-
        
         return (
             <Container style={style.conteinerOne}>
