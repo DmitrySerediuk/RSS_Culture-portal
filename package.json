@@ -35,7 +35,10 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-i18next": "^10.11.4",
-    "typeface-roboto": "0.0.75"
+    "react-image-gallery": "^0.8.18",
+    "react-player": "^1.11.1",
+    "typeface-roboto": "0.0.75",
+    "vertical-timeline-component-for-react": "^1.0.6"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

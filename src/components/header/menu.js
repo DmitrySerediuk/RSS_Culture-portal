@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from '@wapps/gatsby-plugin-lingui';
 import { Button, Toolbar } from '@material-ui/core';
 import { withI18n } from '@lingui/react';

@@ -64,7 +64,7 @@ const architectOfTheDay = ({ i18n }) => {
                     </Grid>
                     <Grid item  className={classes.item}>
                         <Button variant="contained" color="default">
-                            <Link to='./user' className={classes.link}>
+                            <Link to='/user' className={classes.link}>
                                 {i18n.t`MAIN__AUTOR-OF-THE-DAY--BUTTON`}
                             </Link>
                         </Button>
