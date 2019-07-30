@@ -1,12 +1,13 @@
 import React, { Fragment } from "react";
 import { Link } from "gatsby";
 import Header from "../components/header";
-import Search from "../components/search";
+import SearchPage from "../components/searchPage";
+import 'typeface-roboto';
 
 const searchPage = () => (
     <Fragment>
       <Header />
-      <Search />
+      <SearchPage />
     </Fragment>
 );
 export default searchPage;

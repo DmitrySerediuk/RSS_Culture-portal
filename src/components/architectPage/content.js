@@ -1,17 +1,17 @@
 import React, { useState, Fragment } from 'react';
-import Architect from './architect';
-import TimeLine from './timeline';
-import Works from './works';
-import Gallery from './gallery';
-import Youtube from './youtube';
-import Map from './map';
+import Architect from './architect/architect';
+import TimeLine from './timeline/timeline';
+import Works from './works/works';
+// import Gallery from './gallery/gallery';
+// import Video from './video/videoContainer';
+// import Map from './map/map';
 
 const Content = (props) => {
     const {imageSrc, initials, yearsOfLife, desc, works, url, timeline} = props.data;
 
     return (
         <Fragment>            
-            <Architect 
+            <Architect
                 src={imageSrc}
                 initials={initials}
                 yearsOfLife={yearsOfLife}
@@ -19,9 +19,9 @@ const Content = (props) => {
             />
             <TimeLine timeline={timeline}/>
             <Works works={works}/>
-            <Gallery />
-            <Youtube url={url}/>
-            <Map />
+            {/* <Gallery /> */}
+            {/* <Video url={url}/> */}
+            {/* <Map /> */}
         </Fragment>
     )
 }

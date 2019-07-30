@@ -3,10 +3,9 @@ import {Container, Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
     container: {
         padding: '50px 0',
-        // background: 'orange',
         textAlign: 'center'
     },
     initials: {
@@ -21,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     desc: {
         fontSize: '1rem' 
     }
-}));
+});
 
 const Architect = (props) => {
     const classes = useStyles();

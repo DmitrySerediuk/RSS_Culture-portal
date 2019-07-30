@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from "gatsby";
 import Header from "../components/header";
-import StartPage from '../components/index';
+import StartPage from '../components/indexPage';
 import 'normalize.css';
 import 'typeface-roboto';
 

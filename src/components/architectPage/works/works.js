@@ -13,7 +13,8 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 'bold'
     },
     table: {
-        margin: '30px auto'
+        margin: '30px auto',
+        boxShadow: '4px 4px 10px #000000'
     },
     tHead: {
         backgroundColor: '#2F9DFF',
