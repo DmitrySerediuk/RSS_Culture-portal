@@ -27,5 +27,20 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locale`,
+        name: `locale`,
+      },
+    },
+    {
+      resolve: '@wapps/gatsby-plugin-lingui',
+      options: {
+        availableLngs: ['en', 'by', 'ru'],
+        fallbackLng: 'en',
+        siteUrl: 'http://sochi-rio.ru/1/',
+      },
+    },
   ],
 }

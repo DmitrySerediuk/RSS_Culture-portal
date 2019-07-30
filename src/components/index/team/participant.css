@@ -1,0 +1,24 @@
+.participant {
+    list-style: none;
+    margin: 5px;
+    box-shadow: inset 2px 2px 4px #000000, 2px 2px 4px #000000;
+}
+
+.github-link {
+    font-weight: bold;
+    color: #3c6cee;
+    transition: all 0.3s;
+    font-size: 0.75rem;
+}
+
+.github-link:hover {
+    color: #7e3d3d;
+}   
+
+.participant-img {
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+
+

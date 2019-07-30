@@ -1,0 +1,53 @@
+.authorOfTheDay {
+    margin: 50px 0;
+    border: 2px solid #3c65be;
+}
+.authorOfTheDay-title {
+    padding: 10px 20px;
+    background-color: #3c65be;
+    text-transform: capitalize;
+    color: #ffffff;
+}
+.authorOfTheDay-block {
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: auto auto 170px;
+    grid-template-areas: 
+    'init init port'
+    'year year port'
+    'desc desc port'
+    'btn btn port';
+}
+
+.authorOfTheDay-initials {
+    grid-area: init;
+}
+
+.authorOfTheDay-years {
+    grid-area: year;
+    font-weight: bold;
+    color: #222222;
+}
+
+.authorOfTheDay-desc {
+    grid-area: desc;
+}
+
+.authorOfTheDay-portrait {
+    grid-area: port;
+    width: 170px;
+}
+
+.authorOfTheDay-btn {
+    grid-area: btn;
+}
+
+.authorOfTheDay-title,
+.authorOfTheDay-initials,
+.authorOfTheDay-years,
+.authorOfTheDay-desc,
+.authorOfTheDay-portrait,
+.authorOfTheDay-btn {
+    display: flex;
+    align-items: center;
+}

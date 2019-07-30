@@ -1,25 +1,31 @@
-import React, { Component } from 'react';
-import { Link } from "gatsby";
+import { graphql } from 'gatsby';
+import { withLingui } from '@wapps/gatsby-plugin-lingui';
 
-import Header from "../components/header";
-import VideoModal from '../components/architectPage/video/videoContainer';
-import Gallery from '../components/architectPage/gallery/slider';
+import Content from '../components/index/content';
+import 'normalize.css';
+
+import Layout from '../components/layout';
+import React, { Component } from 'react';
 
 class indexPage extends Component {
-
-
+  
   render() {
-    console.log(this);
-    const { lang } = this.props.pageContext;
-
     return (
-      <React.Fragment>
-        <Header lang={lang} />
-        <VideoModal/>
-        <Gallery />
-      </React.Fragment>
-    );
-  }
+      <Layout>
+        <Content />
+      </Layout>
+    )
+  };
 }
 
-export default indexPage;
+export default withLingui()(indexPage);
+
+export const query = graphql`
+  query($lng: String!, $fallbackLng: String!) {
+    locales: allLocale(
+      filter: { lng: { in: [$lng, $fallbackLng] }, ns: { eq: "messages" } }
+    ) {
+      ...LocaleFragment
+    }
+  }
+`;
