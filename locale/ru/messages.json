@@ -1,0 +1,21 @@
+{
+  "TITLE__MAIN": "Главная. Архитекторы Беларуси",
+  "DESCRIPTION__MAIN": "Сайт об архитекторах беларуси",
+  "KEYWORDS__MAIN": "Архитекторы, Беларусь",
+  "HEADER__TITLE": "Архитекторы Беларуси",
+  "HEADER__MENU--MAIN": "Главная",
+  "HEADER__MENU--SEARCH": "Список архитекторов",
+  "MAIN__AUTOR-OF-THE-DAY--TITLE": "Архитектор дня",
+  "MAIN__AUTOR-OF-THE-DAY--BUTTON": "Просмотр",
+  "MAIN__OUR-TEAM": "Наша команда",
+  "SEARCH__TITLE": "Белорусские архитекторы",
+  "SEARCH__PLACEHOLDER": "Введите имя или фамилию",
+  "USER_TIMELINE": "Временная линия",
+  "USER__MASTERPRICE": "Шедевры",
+  "USER__MASTERPRICE--PRODUCT": "Произведение",
+  "USER__MASTERPRICE--CREATE-DATE": "Дата создания",
+  "USER__YOUTUBE": "Youtube",
+  "USER__YOUTUBE--BUTTON": "Смотреть видео",
+  "USER__YOUTUBE--MAP": "Карта",
+  "USER__YOUTUBE--GALLERY": "Галерея"
+}

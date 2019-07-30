@@ -1,19 +1,23 @@
 import React, { Component } from "react";
-import { Link } from "gatsby";
+import { Link } from '@wapps/gatsby-plugin-lingui';
+import { withI18n } from '@lingui/react';
+import Button from '@material-ui/core/Button';
+
 
 class Menu extends Component {
 
   render() {
-    const { lang } = this.props;
+    const { i18n } = this.props;
     return (
-      <React.Fragment>
-        <ul>
-          <li><Link to={`/${lang}`}>Home</Link></li>
-          <li><Link to={`/${lang}/search`}>Search</Link></li>
-        </ul>
-      </React.Fragment >
+      <div className="nav">
+        <Button variant="contained" color="primary" className="nav-btn">
+          <Link to='/' className="header-link">{i18n.t`HEADER__MENU--MAIN`}</Link>
+        </Button>
+        <Button variant="contained" color="primary" className="nav-btn">
+          <Link to='/search/' className="header-link">{i18n.t`HEADER__MENU--SEARCH`}</Link>
+        </Button>
+      </div>
     );
   };
 }
-
-export default Menu;
+export default withI18n()(Menu);
