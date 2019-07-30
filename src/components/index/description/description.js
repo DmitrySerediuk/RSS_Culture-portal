@@ -1,25 +1,26 @@
 import React, { Fragment } from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import { Container, Typography } from '@material-ui/core';
 import { withI18n } from '@lingui/react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import dataFilter from '../../dataFilter';
+import { makeStyles } from '@material-ui/core/styles';
 
-import './description.css';
-
-const Description = ({ i18n }) => {
-    const titleStyle = {
+const useStyles = makeStyles(theme => ({
+    title: {
         margin: '1.5rem 0',
         textAlign: 'center',
-    };
-    const paragraphStyle = {
+        fontSize: '1.5rem'
+    },
+    paragraph: {
         margin: '1rem 0',
         textIndent: '2rem',
-        textAlign: 'justify',
-    };
+        textAlign: 'justify'
+    },
+}));
 
-
+const Description = ({ i18n }) => {
+    const classes = useStyles();
     const query = graphql`
     query {
         allContentfulMainPage {
@@ -43,11 +44,11 @@ const Description = ({ i18n }) => {
 
     return (
         <Fragment>
-            <Container>
-                <Typography variant="h5" color="inherit" style={titleStyle}>
+            <Container maxWidth='md'>
+                <Typography variant="h5" color="inherit" className={classes.title}>
                     {mainDataFiltered.data[0].title}
                 </Typography>
-                <Typography variant="body1" color="inherit" component="p" style={paragraphStyle}>
+                <Typography variant="body1" color="inherit" component="p" className={classes.paragraph}>
                     {mainDataFiltered.data[0].text.text}
                     {/* {mainDataFiltered.data[0].multiText.multiText} */}
                     {/* The Belarusian Union of Architects is 70 years old. Its history is a part of the history of the country and the people,its creative activity. A long and complex path is passed - the path of search and embodiment, mistakes and achievements. And today's Belarus shows the world its beautiful renewed face thanks to the talent and skill, professional skill of the Architects, whose tireless work over the years has increased the treasury of Belarusian architecture. */}
