@@ -8,12 +8,6 @@ import ArchitectPage from '../components/architectPage';
 
 const SecondPage = () => (
   <Layout>
-    {/* <h1>
-      <Trans>Hi from the second page</Trans>
-    </h1>
-    <p>
-      <Trans>Welcome to page 2</Trans>
-    </p> */}
     <ArchitectPage />
     <div>Hey </div>
     <Link to="/">

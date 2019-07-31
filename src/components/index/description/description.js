@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
     title: {
-        margin: '1.5rem 0',
+        padding: '2rem',
         textAlign: 'center',
         fontSize: '1.5rem'
     },

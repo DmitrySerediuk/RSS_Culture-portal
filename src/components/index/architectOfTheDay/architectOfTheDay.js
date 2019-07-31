@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(theme => ({
     architectOfTheDay: {
         margin: '50px auto',
-        border: '2px solid #3c65be',
+        border: '2px solid #4A90E2',
         padding: '0',
         boxSizing: 'border-box'
     },
@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         padding: '10px 20px',
-        backgroundColor: '#3c65be',
+        backgroundColor: '#4A90E2',
         textTransform: 'capitalize',
         color: '#ffffff'
     },
