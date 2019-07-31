@@ -12,12 +12,13 @@ export default function MapMarker(props) {
         borderRadius: '50%',
         overflow: 'hidden'
     }
-    return (
+    return (<div>
         <Marker lat={lat} lon={lon}>
             <MarkerLayout>
-                <div style={imgStyle}>
+            <div style={imgStyle}>
                 </div>
             </MarkerLayout>
         </Marker>
+    </div>
     )
 }
