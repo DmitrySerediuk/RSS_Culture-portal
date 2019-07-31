@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 
 import TextField from '@material-ui/core/TextField';
-
+import { Search } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     searchInput: {
-        width: '100%',
+        width: '100%'
     },
 }));
 export default function ArchitectItem({changeListFilterValue}) {
     const classes = useStyles();
-    const [state,setState] = useState({
+    const [state, setState] = useState({
         searchValue:''
     })
     const onChangeSearchInput = (e) =>{

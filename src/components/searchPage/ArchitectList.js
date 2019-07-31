@@ -8,10 +8,9 @@ import SearchInput from './SearchInput'
 
 const useStyles = makeStyles(theme => ({
 	root: {
-		width: '90%',
-		maxWidth: 1000,
 		backgroundColor: theme.palette.background.paper,
-		margin: 'auto'
+		margin: '20px auto',
+		width: '90%'
 	},
 }));
 

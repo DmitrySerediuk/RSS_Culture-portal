@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import { Container } from '@material-ui/core';
+import React from 'react';
+import { Container, Typography, Button} from '@material-ui/core';
 import Content from './content';
-
+import { Link } from '@wapps/gatsby-plugin-lingui';
 
  export default () => {
     const data = [
@@ -63,8 +63,13 @@ import Content from './content';
     ];
 
     return (
-        <Container maxWidth="md">
+        <Container maxWidth="md" style={{ backgroundColor:'#ffffff', margin: 'auto'}}>
             <Content data={data[0]}/>
+            <Button variant="contained" color="default" style={{margin: '50px 0'}}>
+                <Link to="/" style={{textDecoration: 'none', color: '#222222'}}>
+                    Go back to the homepage
+                </Link>
+            </Button>
         </Container>
     )
 }

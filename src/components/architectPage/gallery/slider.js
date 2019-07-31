@@ -7,21 +7,22 @@ import './style.css';
 
 
 const useStyles = makeStyles({
-    container: {
+    containerMain: {
         padding: '50px 0',
         textAlign: 'center'
     },
     title: {
-        color: '#2F9DFF',
+        color: '#4A90E2',
         fontSize: '3em',
         fontWeight: 'bold', 
         margin: 'auto',
         padding: '20px 0'
     },
-    containerTwo: {
+    containerNested: {
         width: '70%',
+        borderRadius: '5px',
         margin: '0 auto',
-        boxShadow: '5px 8px 10px #000000'
+        boxShadow: '0px 0px 30px #000000'
     }
    
 });
@@ -52,8 +53,8 @@ const Gallery = () => {
         ]
        
         return (
-            <Container maxWidth="md" className={classes.container}>
-                <Container className={classes.containerTwo}>
+            <Container maxWidth="md" className={classes.containerMain}>
+                <Container className={classes.containerNested}>
                     <Typography variant="h3" gutterBottom className={classes.title}>
                         Gallery
                     </Typography>

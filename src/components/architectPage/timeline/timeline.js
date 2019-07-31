@@ -10,14 +10,13 @@ const useStyles = makeStyles(theme => ({
     },
     title: {
         textAlign: 'center',
-        color: '#2F9DFF',
+        color: '#4A90E2',
         fontWeight: 'bold'
     },
     yearTitle: {
-        color: '#2F9DFF',
+        color: '#4A90E2',
         fontWeight: 'bold'
-    }
-    
+    } 
 }));
 
 const TimeLine = (props) => {

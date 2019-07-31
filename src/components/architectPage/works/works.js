@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     title: {
         textAlign: 'center',
         margin: '20px 0',
-        color: '#2F9DFF',
+        color: '#4A90E2',
         fontWeight: 'bold'
     },
     table: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
         boxShadow: '4px 4px 10px #000000'
     },
     tHead: {
-        backgroundColor: '#2F9DFF',
+        backgroundColor: '#4A90E2',
     },
     tableTitle: {
         fontWeight: 'bold',

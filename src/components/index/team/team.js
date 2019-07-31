@@ -10,8 +10,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(theme => ({
 	team: {
 		backgroundColor: theme.palette.background.paper,
-        margin: '50px 0',
-        padding: '0'
+        marginTop: '20px',
+        padding: '50px 0'
     },
     participantsList: {
         display: 'grid',

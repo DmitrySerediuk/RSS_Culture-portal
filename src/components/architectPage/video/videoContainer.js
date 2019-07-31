@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'center'
     },
     title: {
-        color: '#2F9DFF',
+        color: '#4A90E2',
         fontSize: '3em',
         fontWeight: 'bold', 
         margin: 'auto',
