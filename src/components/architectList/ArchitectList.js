@@ -26,6 +26,16 @@ export default function ArchitectList() {
 		'Васёк'
 	]
 	);
+	// Object for input [
+	// 	{
+	// 		name: 'Name Surname',
+	// 		bitrhPlace: 'City'
+	// 	},
+	// 	{
+	// 		...
+	// 	}
+	// ]
+
 
 	const [searchValue, setSearchValue] = useState('');
 
