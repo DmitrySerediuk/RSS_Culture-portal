@@ -16,7 +16,7 @@ exports.createPages = async ({ page, actions, graphql }) => {
           path: `/user/${user}`,
           component: indexUserTemplate,
           context: {
-            path: user,
+            pathname: user,
           }
         })
       });
