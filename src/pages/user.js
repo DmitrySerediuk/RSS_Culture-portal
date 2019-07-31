@@ -4,22 +4,23 @@ import { Trans } from '@lingui/react';
 import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 
 import Layout from '../components/layout';
+import Description from '../components/architectPage/description';
+import Timeline from '../components/architectPage/timeline';
+import Gallery from '../components/architectPage/gallery/slider';
+import Gallery2 from '../components/architectPage/gallery2';
+import Video from '../components/architectPage/video/videoContainer';
 
-const SecondPage = () => (
+const ArchitectPage = () => (
   <Layout>
-    <h1>
-      <Trans>Hi from the second page</Trans>
-    </h1>
-    <p>
-      <Trans>Welcome to page 2</Trans>
-    </p>
-    <Link to="/">
-      <Trans>Go back to the homepage</Trans>
-    </Link>
+    <Description />
+    <Timeline />
+    <Gallery />
+    <Gallery2 />
+    <Video />
   </Layout>
 );
 
-export default withLingui()(SecondPage);
+export default withLingui()(ArchitectPage);
 
 export const query = graphql`
   query($lng: String!) {

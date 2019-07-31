@@ -19,4 +19,11 @@ export default class DataFilter {
     return this;
 
   }
+
+  randomData() {
+    let rand = - 0.5 + Math.random() * (this.data.length)
+    rand = Math.round(rand);
+    console.log('rand', rand);
+    return this.data[rand];
+  }
 }
