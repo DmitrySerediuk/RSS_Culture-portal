@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 
 import List from '@material-ui/core/List';
 
-import ArchitectItem from './ArchitectItem'
-import SearchInput from './SearchInput'
+import ArchitectItem from './ArchitectItem';
+import SearchInput from './SearchInput';
 
 import dataFilter from '../dataFilter';
 import { withI18n } from '@lingui/react';
@@ -12,10 +12,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const useStyles = makeStyles(theme => ({
 	root: {
-		width: '90%',
-		maxWidth: 1000,
 		backgroundColor: theme.palette.background.paper,
-		margin: 'auto'
+		margin: '20px auto',
+		width: '90%'
 	},
 }));
 
@@ -74,20 +73,22 @@ const ArchitectList = ({ i18n }) => {
 
 	const changeListFilterValue = (value) => {
 		setSearchValue(value)
-	}
+	};
 
 	const renderNameList = filterName(architectDataFiltered.data, searchValue);
-	const namesList = renderNameList.map(item => {
+
+	const namesList = renderNameList.map((item, index) => {
 		return (
-			<ArchitectItem name={item.name} path={item.path} img={item.tmp.file.url} />
+			<ArchitectItem key={index} name={item.name} path={item.path} img={item.tmp.file.url} />
 		)
 	})
 	return (
-		<List className={classes.root}>
-			<SearchInput
-				changeListFilterValue={changeListFilterValue} />
-			{namesList}
-		</List>
+		<Fragment>
+			<SearchInput changeListFilterValue={changeListFilterValue} />
+			<List className={classes.root}>
+				{namesList}
+			</List>
+		</Fragment>
 	)
 };
 

@@ -1,31 +1,68 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from '@wapps/gatsby-plugin-lingui';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
+import { Container, Typography, Toolbar } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import { withI18n } from '@lingui/react';
-
-import './header.css';
 import Menu from './menu';
-import Lang from './lang';
+import 'typeface-roboto';
+import logo from '../../assets/images/architect-logo-small.png';
 
-
-class Header extends Component {
-  render() {
-    const { i18n } = this.props;
-    return (
-      <div className="header-wrapper">
-        <Container maxWidth="md">
-          <Typography variant="h1" className="header-title" style={{ fontSize: '2rem' }} >
-            <Link to={`/`} className="link">
-              {i18n.t`HEADER__TITLE`}
-            </Link>
-          </Typography>
-          <Lang />
-          <Menu />
-        </Container>
-      </div>
-    );
+const useStyles = makeStyles(theme => ({
+  headerWrapper: {
+    boxShadow: '0px 4px 4px #000000',
+    backgroundColor: '#263545',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flex: '0 1',
+    ['@media (max-width: 1020px)']: { 
+        flexDirection: 'column'
+    }
+  },
+  containerLogo: {
+    margin: '0',
+    padding: '0',
+    width: 'auto',
+    display: 'flex',
+    alignItems: 'center',
+    ['@media (max-width: 1020px)']: { 
+      padding: '5px 0'
+    },
+    ['@media (max-width: 490px)']: { 
+      justifyContent: 'center',
+    }
+  },
+  headerTitle: {
+    fontSize: '2rem',
+    textAlign: 'center',
+    padding: '10px',
+    ['@media (max-width: 490px)']: { 
+      flex: '0 1',
+      textAlign: 'left'
+    }
+  },
+  homeLink: {
+    textDecoration: 'none',
+    color: '#ffffff'
   }
+}));
+
+const Header = (props) => {
+    const classes = useStyles();
+    const { i18n } = props;
+    return (
+            <Toolbar className={classes.headerWrapper}>
+              <Container className={classes.containerLogo}>
+                 <img src={logo}/>
+                   <Typography variant="h1" className={classes.headerTitle} >
+                     <Link to={`/`} className={classes.homeLink}>
+                       {i18n.t`HEADER__TITLE`}
+                     </Link>
+                   </Typography>
+              </Container>
+              <Menu />
+            </Toolbar>
+    );
 }
 
 export default withI18n()(Header);

@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Language } from '@wapps/gatsby-plugin-lingui';
-import { Typography } from '@material-ui/core';
+import { Select, MenuItem } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import 'typeface-roboto';
 
+const useStyles = makeStyles(theme => ({
+    chooseLang: {
+        color: '#ffffff',
+        padding: '2px',
+        borderRadius: '5px',
+        boxShadow: '1px 1px 2px #000000',
+        outline: 'none',
+        cursor: 'pointer',
+    }
+}));
 
 const Switcher = ({ changeLng, lng, availableLngs }) => {
-
+    const classes = useStyles();
     return (
-        <Typography component="select" className="choose-lang" onChange={(event) => changeLng(event.target.value)}>
-            {availableLngs.map(value => (
-                <option key={value} value={value} selected={value === lng}>{value}</option>
-            ))}
-        </Typography>
+            <Select variant="filled" value={lng} onChange={(event) => changeLng(event.target.value)} className={classes.chooseLang}>
+                {availableLngs.map(value => (
+                    <MenuItem key={value} value={value} selected={value === lng}>{value}</MenuItem>
+                ))};
+            </Select>
     );
 }
 

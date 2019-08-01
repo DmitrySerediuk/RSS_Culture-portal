@@ -1,14 +1,12 @@
 import React from 'react';
-import { withLingui } from '@wapps/gatsby-plugin-lingui';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
+import { withLingui } from '@wapps/gatsby-plugin-lingui';
+
 import ArchitectSingle from '../components/architectPage';
 
-import { useStaticQuery, graphql } from 'gatsby';
-
-
 const ArchitectPage = (...args) => {
-  console.log('first', args);
   return (
     <Layout>
       <ArchitectSingle path={args[0].path} />
