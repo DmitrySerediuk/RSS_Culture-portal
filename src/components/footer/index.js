@@ -9,7 +9,8 @@ const useStyles = makeStyles(theme => ({
         padding: '10px 0',
         textAlign: 'center',
         color: '#ffffff',
-        boxShadow: 'inset 0px 4px 4px #000000'
+        boxShadow: 'inset 0px 4px 4px #000000',
+        flex: '0 1'
     },
     paragraph: {
         margin: '10px auto' 

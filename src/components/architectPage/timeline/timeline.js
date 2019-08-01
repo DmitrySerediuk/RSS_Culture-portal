@@ -29,7 +29,7 @@ const TimeLine = (props) => {
                 key={index}
                 dateText={year}
                 dateInnerStyle={{ 
-                    background: '#2F9DFF',
+                    background: '#4A90E2',
                     fontSize: '1.25rem',
                     fontFamily: 'Roboto',
                     color: '#000000'

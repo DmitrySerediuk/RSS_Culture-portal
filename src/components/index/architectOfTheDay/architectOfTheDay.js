@@ -11,6 +11,13 @@ const useStyles = makeStyles(theme => ({
         padding: '0',
         boxSizing: 'border-box'
     },
+    container: {
+        display: 'flex',
+        ['@media (max-width: 768px)']: { 
+            flexDirection: 'column',
+            textAlign: 'center'
+        }
+    },
     infoWrapper: {
         flex: '1 1',
         flexDirection: 'column',
@@ -24,7 +31,10 @@ const useStyles = makeStyles(theme => ({
     },
     item: {
         padding: '10px 20px',
-        margin: '10px 0'
+        margin: '10px 0',
+        ['@media (max-width: 768px)']: { 
+            margin: '0'
+        }
     },
     link: {
         textDecoration: 'none',
@@ -33,8 +43,12 @@ const useStyles = makeStyles(theme => ({
     architectImageWrapper: {
         flex: '0 1',
         display: 'flex',
+        justifyContent: 'center',
         alignItems: 'center',
-        padding: '1rem'
+        padding: '1rem',
+        ['@media (max-width: 768px)']: { 
+            order: -1
+        }
     }
 }));
 
@@ -45,7 +59,7 @@ const architectOfTheDay = ({ i18n }) => {
             <Typography  variant="h5" className={classes.title}> 
                 {i18n.t`MAIN__AUTOR-OF-THE-DAY--TITLE`}
             </Typography>             
-            <Grid container>
+            <Grid container className={classes.container}>
                 <Grid item className={classes.infoWrapper}>
                     <Grid item className={classes.item}>
                         <Typography  variant="h6">

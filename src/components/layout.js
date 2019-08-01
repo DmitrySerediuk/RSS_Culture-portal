@@ -18,9 +18,9 @@ const useStyles = makeStyles(theme => ({
     containerNested: {
       backgroundImage: `url(${background})`, 
       margin: 'auto',
-      flex: '1 1'
-    },
-
+      minHeight: '100vh',
+      flex: '1 1',
+    }
 }));
 
 const Layout = ({ children, i18n }) => {
@@ -33,7 +33,7 @@ const Layout = ({ children, i18n }) => {
         <meta name="keywords" content={i18n.t`KEYWORDS__MAIN`} />
       </Head>
       <Container maxWidth={false} className={classes.containerMain}>
-        <Header siteTitle={i18n.t`TITLE__MAIN`} />
+        <Header siteTitle={i18n.t`TITLE__MAIN`}/>
         <Container maxWidth={false} className={classes.containerNested}>
           {children}
         </ Container>

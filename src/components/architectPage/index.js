@@ -1,9 +1,21 @@
 import React from 'react';
-import { Container, Typography, Button} from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import Content from './content';
-import { Link } from '@wapps/gatsby-plugin-lingui';
+import { makeStyles } from '@material-ui/core/styles';
 
- export default () => {
+const useStyles = makeStyles(theme => ({
+	container: { 
+        backgroundColor:'#ffffff',
+        margin: 'auto', 
+        width: '85%', 
+        minHeight: '100vh',
+        paddingTop: '24px',
+        paddingBottom: '24px'
+    }
+}));
+
+export default () => {
+    const classes = useStyles();
     const data = [
         {   
            imageSrc: "https://grnkvch.github.io/CodeJam-Culture-Portal/static/baklanov-e8c0f280f4b86d29526072e70c9ee431.jpg",
@@ -63,13 +75,8 @@ import { Link } from '@wapps/gatsby-plugin-lingui';
     ];
 
     return (
-        <Container maxWidth="md" style={{ backgroundColor:'#ffffff', margin: 'auto'}}>
+        <Container maxWidth="md" className={classes.container}>
             <Content data={data[0]}/>
-            <Button variant="contained" color="default" style={{margin: '50px 0'}}>
-                <Link to="/" style={{textDecoration: 'none', color: '#222222'}}>
-                    Go back to the homepage
-                </Link>
-            </Button>
         </Container>
     )
 }

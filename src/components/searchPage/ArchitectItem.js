@@ -6,7 +6,7 @@ import Avatar from '@material-ui/core/Avatar';
 
 export default function ArchitectItem({name}){
     return (
-        <ListItem button>
+        <ListItem>
             <ListItemAvatar>
                 <Avatar alt="Remy Sharp" src="https://www.fillmurray.com/200/300" />
             </ListItemAvatar>

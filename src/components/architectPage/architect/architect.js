@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     container: {
-        padding: '50px 0',
+        padding: '24px 0',
         textAlign: 'center'
     },
     initials: {

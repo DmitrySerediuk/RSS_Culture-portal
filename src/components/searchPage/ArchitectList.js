@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 
 import List from '@material-ui/core/List';
 
-import ArchitectItem from './ArchitectItem'
-import SearchInput from './SearchInput'
+import ArchitectItem from './ArchitectItem';
+import SearchInput from './SearchInput';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -44,16 +44,17 @@ export default function ArchitectList() {
 	}
 
 	const renderNameList = filterName(names, searchValue);
-	const namesList = renderNameList.map(item => {
+	const namesList = renderNameList.map((item, index) => {
 		return (
-			<ArchitectItem name={item} />
+			<ArchitectItem key={index} name={item} />
 		)
 	})
 	return (
-		<List className={classes.root}>
-			<SearchInput
-				changeListFilterValue={changeListFilterValue} />
-			{namesList}
-		</List>
+		<Fragment>
+			<SearchInput changeListFilterValue={changeListFilterValue} />
+			<List className={classes.root}>
+				{namesList}
+			</List>
+		</Fragment>
 	)
 };
