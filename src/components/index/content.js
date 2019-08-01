@@ -7,9 +7,9 @@ const Content = () => {
     return (
         <>
             <Description />
-            <ArchitectOfTheDay/>
+            <ArchitectOfTheDay />
             <Team />
-        </>           
+        </>
     )
 }
 

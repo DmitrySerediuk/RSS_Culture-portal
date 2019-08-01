@@ -53,7 +53,6 @@ const authorOfTheDay = ({ i18n }) => {
 
     console.log(architectDataFiltered);
 
-
     return (
         <Container>
             <div className="authorOfTheDay">
@@ -72,9 +71,9 @@ const authorOfTheDay = ({ i18n }) => {
                     </Typography>
                     <Typography variant="body2" className="authorOfTheDay-btn">
                         <Button variant="contained" color="default">
-                            <Link to={'/user/' + architectDataFiltered.path} style={linkStyle}>
+                            {/* <Link to={'/user/' + architectDataFiltered.path} style={linkStyle}>
                                 {i18n.t`MAIN__AUTOR-OF-THE-DAY--BUTTON`}
-                            </Link>
+                            </Link> */}
                         </Button>
                     </Typography>
                     <img alt={architectDataFiltered.name} src={architectDataFiltered.tmp.file.url} className="authorOfTheDay-portrait" />
