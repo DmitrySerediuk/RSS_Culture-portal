@@ -10,27 +10,27 @@ import MapMarker from './MapMarker'
 
 const useStyles = makeStyles(theme => ({
     mapTitle: {
-        width:'100%',
-        textAlign:'center',
+        width: '100%',
+        textAlign: 'center',
         padding: theme.spacing(3, 2),
         backgroundColor: 'white',
         color: 'black',
-        position:'absolute',
+        position: 'absolute',
         // right: 0
     },
     mapContainer: {
         width: '90%',
         maxWidth: 1000,
         margin: 'auto',
-        position:'relative'
+        position: 'relative'
     },
-    title:{
-        width:'fit-content',
+    title: {
+        width: 'fit-content',
         padding: theme.spacing(3, 2),
         margin: '0 auto 20px'
     },
-    tooltip:{
-        position:'relative',
+    tooltip: {
+        position: 'relative',
         width: 100,
     }
 }));
@@ -39,16 +39,16 @@ export default function MapComponent() {
     const classes = useStyles();
     const [state, setState] = useState({
         marker: {
-                lat: 53.89833,
-                lon: 27.56056,
-                imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/%D0%A5%D1%83%D0%B4_%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%A0%D0%91.jpg/250px-%D0%A5%D1%83%D0%B4_%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%A0%D0%91.jpg',
-                title:'Национальный Художественный музей'
-            },
-        center: [53.89833, 27.56056]
+            lat: 53.89833,
+            lon: 27.56056,
+            imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/%D0%A5%D1%83%D0%B4_%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%A0%D0%91.jpg/250px-%D0%A5%D1%83%D0%B4_%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%A0%D0%91.jpg',
+            title: 'Национальный Художественный музей',
+            toolTip: { balloonContentBody: 'Национальный Художественный музей' },
+        },
+        center: [53.89833, 27.56056],
     })
 
     const { marker } = state;
-
 
     return (
         <Box>

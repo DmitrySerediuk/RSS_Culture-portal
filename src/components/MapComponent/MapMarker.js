@@ -2,7 +2,7 @@ import React from "react";
 import { Marker, MarkerLayout } from 'yandex-map-react';
 
 export default function MapMarker(props) {
-    const { lat, lon, imgUrl } = props.marker;
+    const { lat, lon, imgUrl, toolTip } = props.marker;
     const imgStyle = {
         width: 30,
         height: 30,
@@ -13,7 +13,8 @@ export default function MapMarker(props) {
         overflow: 'hidden'
     }
     return (<div>
-        <Marker lat={lat} lon={lon}>
+        <Marker lat={lat} lon={lon}  modules={['geoObject.addon.balloon']}
+      properties={toolTip}>
             <MarkerLayout>
             <div style={imgStyle}>
                 </div>
