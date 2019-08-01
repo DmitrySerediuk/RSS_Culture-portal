@@ -1,18 +1,20 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-// import { Trans } from '@lingui/react';
-import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 
 import Layout from '../components/layout';
-import ArchitectPage from '../components/architectPage';
+import { withLingui } from '@wapps/gatsby-plugin-lingui';
 
-const SecondPage = () => (
-  <Layout>
-    <ArchitectPage />
-  </Layout>
-);
+import ArchitectSingle from '../components/architectPage';
 
-export default withLingui()(SecondPage);
+const ArchitectPage = (...args) => {
+  return (
+    <Layout>
+      <ArchitectSingle path={args[0].path} />
+    </Layout>
+  )
+};
+
+export default withLingui()(ArchitectPage);
 
 export const query = graphql`
   query($lng: String!) {

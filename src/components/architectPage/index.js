@@ -1,7 +1,12 @@
 import React from 'react';
+
 import { Container } from '@material-ui/core';
 import Content from './content';
 import { makeStyles } from '@material-ui/core/styles';
+import { withI18n } from '@lingui/react';
+import { useStaticQuery, graphql } from 'gatsby';
+
+import dataFilter from '../dataFilter';
 
 const useStyles = makeStyles(theme => ({
 	container: { 
@@ -14,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default () => {
+const ArchitectSingle = ({i18n, path}) => {
     const classes = useStyles();
     const data = [
         {   
@@ -74,9 +79,59 @@ export default () => {
         }
     ];
 
+    const queryArch = graphql`
+    query {
+        allContentfulArchitects {
+             nodes {
+               birthDate
+               birthPlace
+               description
+               lang
+               name
+               path
+               timeline {
+                 timeline
+               }
+               mapData {
+                 map
+               }
+               video
+               tmp {
+                 file {
+                   url
+                 }
+               }
+             }
+           }
+         }
+     `;
+
+const pathToFilter = path.split('/').reverse()[0];
+const architectDataFull = useStaticQuery(queryArch);
+const architectDataFiltered = new dataFilter(architectDataFull.allContentfulArchitects.nodes)
+ .filterByField({ lang: i18n._language })
+ .filterByField({ path: pathToFilter })
+ .unique('name');
+
+console.log(architectDataFiltered);
+
+// const descriptionData = {
+//  fullName: architectDataFiltered.data[0].name,
+//  yearsOfLife: architectDataFiltered.data[0].birthDate,
+//  imageUrl: architectDataFiltered.data[0].tmp.file.url,
+//  description: architectDataFiltered.data[0].description
+// };
+
+// const timelineData = architectDataFiltered.data[0].timeline;
+// const galleryData = architectDataFiltered.data[0]; // gallery
+// const videoData = architectDataFiltered.data[0].video;
+// const mapData = architectDataFiltered.data[0].mapData.map;
+
     return (
         <Container maxWidth="md" className={classes.container}>
-            <Content data={data[0]}/>
+            <Content data={architectDataFiltered.data[0]}/>
         </Container>
     )
 }
+
+export default withI18n()(ArchitectSingle);

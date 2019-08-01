@@ -6,6 +6,10 @@ import List from '@material-ui/core/List';
 import ArchitectItem from './ArchitectItem';
 import SearchInput from './SearchInput';
 
+import dataFilter from '../dataFilter';
+import { withI18n } from '@lingui/react';
+import { useStaticQuery, graphql } from 'gatsby';
+
 const useStyles = makeStyles(theme => ({
 	root: {
 		backgroundColor: theme.palette.background.paper,
@@ -14,17 +18,42 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
-export default function ArchitectList() {
+const ArchitectList = ({ i18n }) => {
+	const query = graphql`
+       query {
+           allContentfulArchitects {
+                nodes {
+                  birthDate
+                  birthPlace
+                  description
+                  lang
+                  name
+                  path
+                  timeline {
+                    timeline
+                  }
+                  mapData {
+                    map
+                  }
+                  video
+                  tmp {
+                    file {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+				`;
+
+	const architectDataFull = useStaticQuery(query);
+	const architectDataFiltered = new dataFilter(architectDataFull.allContentfulArchitects.nodes)
+		.filterByField({ lang: i18n._language })
+		.unique('name');
+
+	console.log(architectDataFiltered.data);
+
 	const classes = useStyles();
-	const [names] = useState([
-		'Иван Ургант',
-		'Гарик Варламов',
-		'Билл Мюррей',
-		'Милл Бюррей',
-		'Серега',
-		'Васёк'
-	]
-	);
 
 	const [searchValue, setSearchValue] = useState('');
 
@@ -33,7 +62,10 @@ export default function ArchitectList() {
 			return items
 		}
 		return items.filter(item => {
-			if (item.toLowerCase().includes(filterValue.toLowerCase())) {
+			if (
+				item.name.toLowerCase().includes(filterValue.toLowerCase()) ||
+				item.birthPlace.toLowerCase().includes(filterValue.toLowerCase())
+			) {
 				return item
 			}
 		})
@@ -41,12 +73,13 @@ export default function ArchitectList() {
 
 	const changeListFilterValue = (value) => {
 		setSearchValue(value)
-	}
+	};
 
-	const renderNameList = filterName(names, searchValue);
+	const renderNameList = filterName(architectDataFiltered.data, searchValue);
+
 	const namesList = renderNameList.map((item, index) => {
 		return (
-			<ArchitectItem key={index} name={item} />
+			<ArchitectItem key={index} name={item.name} path={item.path} img={item.tmp.file.url} />
 		)
 	})
 	return (
@@ -58,3 +91,6 @@ export default function ArchitectList() {
 		</Fragment>
 	)
 };
+
+export default withI18n()(ArchitectList);
+// export default ArchitectList

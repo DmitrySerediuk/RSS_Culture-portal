@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 import 'typeface-roboto';
 
 class indexPage extends Component {
-  
+
   render() {
     return (
       <Layout>
