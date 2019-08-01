@@ -9,15 +9,55 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import dataFilter from '../../dataFilter';
 
-import './authorOfTheDay.css';
-
+const useStyles = makeStyles(theme => ({
+    architectOfTheDay: {
+        margin: '50px auto',
+        border: '2px solid #263545',
+        padding: '0',
+        boxSizing: 'border-box'
+    },
+    container: {
+        display: 'flex',
+        ['@media (max-width: 768px)']: { 
+            flexDirection: 'column',
+            textAlign: 'center'
+        }
+    },
+    infoWrapper: {
+        flex: '1 1',
+        flexDirection: 'column',
+        justifyContent: 'center',
+    },
+    title: {
+        padding: '10px 20px',
+        backgroundColor: '#263545',
+        textTransform: 'capitalize',
+        color: '#ffffff'
+    },
+    item: {
+        padding: '10px 20px',
+        margin: '10px 0',
+        ['@media (max-width: 768px)']: { 
+            margin: '0'
+        }
+    },
+    link: {
+        textDecoration: 'none',
+        color: '#222222'
+    },
+    architectImageWrapper: {
+        flex: '0 1',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '1rem',
+        ['@media (max-width: 768px)']: { 
+            order: -1
+        }
+    }
+}));
 
 const authorOfTheDay = ({ i18n }) => {
-
-    const linkStyle = {
-        textDecoration: 'none',
-        color: '#222222',
-    };
 
     const query = graphql`
        query {
@@ -52,33 +92,42 @@ const authorOfTheDay = ({ i18n }) => {
         .randomData('name');
 
     console.log(architectDataFiltered);
-    1111
+    const classes = useStyles();
+    
     return (
-        <Container>
-            <div className="authorOfTheDay">
-                <Typography variant="h5" className="authorOfTheDay-title">
-                    {i18n.t`MAIN__AUTOR-OF-THE-DAY--TITLE`}
-                </Typography>
-                {/* <div className="authorOfTheDay-block">
-                    <Typography variant="h6" className='authorOfTheDay-initials'>
-                        {architectDataFiltered.name}
-                    </Typography>
-                    <Typography variant="body1" className='authorOfTheDay-years'>
+        <Container className={classes.architectOfTheDay}>               
+            <Typography  variant="h5" className={classes.title}> 
+                {i18n.t`MAIN__AUTOR-OF-THE-DAY--TITLE`}
+            </Typography>             
+            <Grid container className={classes.container}>
+                <Grid item className={classes.infoWrapper}>
+                    <Grid item className={classes.item}>
+                        <Typography  variant="h6">
+                            {architectDataFiltered.name}
+                        </Typography>
+                    </Grid>
+                    <Grid item className={classes.item}>
+                        <Typography  variant="body1">
                         {architectDataFiltered.birthDate}
-                    </Typography>
-                    <Typography variant="body2" className="authorOfTheDay-desc">
+                        </Typography>
+                    </Grid>
+                    <Grid item className={classes.item}>
+                        <Typography  variant="body2">
                         {architectDataFiltered.description}
-                    </Typography>
-                    <Typography variant="body2" className="authorOfTheDay-btn">
+                        </Typography>
+                    </Grid>
+                    <Grid item  className={classes.item}>
                         <Button variant="contained" color="default">
-                            <Link to={'/user/' + architectDataFiltered.path} style={linkStyle}>
+                            <Link to='/user' className={classes.link}>
                                 {i18n.t`MAIN__AUTOR-OF-THE-DAY--BUTTON`}
                             </Link>
                         </Button>
-                    </Typography>
-                    <img alt={architectDataFiltered.name} src={architectDataFiltered.tmp.file.url} className="authorOfTheDay-portrait" />
-                </div> */}
-            </div>
+                    </Grid>
+                </Grid>                    
+                <Grid item className={classes.architectImageWrapper}>
+                    <img alt={architectDataFiltered.name} src={architectDataFiltered.tmp.file.url} style={{width: '150px'}} />
+                </Grid>
+            </Grid>
         </Container>
     )
 }
