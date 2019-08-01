@@ -47,7 +47,7 @@ const authorOfTheDay = ({ i18n }) => {
         `;
     const architectDataFull = useStaticQuery(query);
     const architectDataFiltered = new dataFilter(architectDataFull.allContentfulArchitects.nodes)
-        .filterByLang({ lang: i18n._language })
+        .filterByField({ lang: i18n._language })
         .unique('name')
         .randomData('name');
 

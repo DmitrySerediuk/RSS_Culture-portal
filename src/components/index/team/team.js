@@ -24,7 +24,7 @@ const Team = ({ i18n }) => {
     `;
     const teamDataFull = useStaticQuery(query);
     const teamDataFiltered = new dataFilter(teamDataFull.allContentfulTeam.nodes)
-        .filterByLang({ lang: i18n._language })
+        .filterByField({ lang: i18n._language })
         .unique('githubNick');
 
     const listOfParticipants = teamDataFiltered.data.map(participant => {

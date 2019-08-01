@@ -38,7 +38,7 @@ const Description = ({ i18n }) => {
     `;
     const mainDataFull = useStaticQuery(query);
     const mainDataFiltered = new dataFilter(mainDataFull.allContentfulMainPage.nodes)
-        .filterByLang({ lang: i18n._language })
+        .filterByField({ lang: i18n._language })
         .unique('title');
 
     return (
