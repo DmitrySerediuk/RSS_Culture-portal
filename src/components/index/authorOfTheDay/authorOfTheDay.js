@@ -1,44 +1,87 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link } from '@wapps/gatsby-plugin-lingui';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+
+import { withI18n } from '@lingui/react';
+import { useStaticQuery, graphql } from 'gatsby';
+
+import dataFilter from '../../dataFilter';
+
 import './authorOfTheDay.css';
 
-const authorOfTheDay = () => {
+
+const authorOfTheDay = ({ i18n }) => {
+
     const linkStyle = {
         textDecoration: 'none',
         color: '#222222',
     };
 
+    const query = graphql`
+       query {
+           allContentfulArchitects {
+                nodes {
+                  birthDate
+                  birthPlace
+                  description
+                  lang
+                  name
+                  path
+                  timeline {
+                    timeline
+                  }
+                  mapData {
+                    map
+                  }
+                  video
+                  tmp {
+                    file {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+        `;
+    const architectDataFull = useStaticQuery(query);
+    const architectDataFiltered = new dataFilter(architectDataFull.allContentfulArchitects.nodes)
+        .filterByLang({ lang: i18n._language })
+        .unique('name')
+        .randomData('name');
+
+    console.log(architectDataFiltered);
+
+
     return (
         <Container>
             <div className="authorOfTheDay">
-                <Typography  variant="h5" className="authorOfTheDay-title"> 
-                    Author of the day
+                <Typography variant="h5" className="authorOfTheDay-title">
+                    {i18n.t`MAIN__AUTOR-OF-THE-DAY--TITLE`}
                 </Typography>
-                <div className="authorOfTheDay-block"> 
-                    <Typography  variant="h6" className='authorOfTheDay-initials'>
-                        Mikhail Ivanovich Baklanov
+                <div className="authorOfTheDay-block">
+                    <Typography variant="h6" className='authorOfTheDay-initials'>
+                        {architectDataFiltered.name}
                     </Typography>
-                    <Typography  variant="body1" className='authorOfTheDay-years'>
-                        January 30 (February 12) - January 23, 1990
+                    <Typography variant="body1" className='authorOfTheDay-years'>
+                        {architectDataFiltered.birthDate}
                     </Typography>
-                    <Typography  variant="body2" className="authorOfTheDay-desc">
-                        Belarusian Soviet architect. Honored Architect of the Belorussian SSR (1969).
+                    <Typography variant="body2" className="authorOfTheDay-desc">
+                        {architectDataFiltered.description}
                     </Typography>
-                    <Typography  variant="body2" className="authorOfTheDay-btn">
+                    <Typography variant="body2" className="authorOfTheDay-btn">
                         <Button variant="contained" color="default">
-                            <Link to='./user' style={linkStyle}>
-                                Go to page
+                            <Link to={'/user/' + architectDataFiltered.path} style={linkStyle}>
+                                {i18n.t`MAIN__AUTOR-OF-THE-DAY--BUTTON`}
                             </Link>
                         </Button>
                     </Typography>
-                    <img src="https://grnkvch.github.io/CodeJam-Culture-Portal/static/baklanov-e8c0f280f4b86d29526072e70c9ee431.jpg" className="authorOfTheDay-portrait" />
+                    <img alt={architectDataFiltered.name} src={architectDataFiltered.tmp.file.url} className="authorOfTheDay-portrait" />
                 </div>
             </div>
         </Container>
     )
 }
 
-export default authorOfTheDay;
+export default withI18n()(authorOfTheDay);

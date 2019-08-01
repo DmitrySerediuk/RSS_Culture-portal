@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Trans } from '@lingui/react';
-import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
+import { withLingui } from '@wapps/gatsby-plugin-lingui';
 
 import Layout from '../components/layout';
 import ArchitectList from "../components/architectList"
@@ -10,7 +10,7 @@ import ArchitectList from "../components/architectList"
 const IndexPage = () => (
   <Layout>
     <h1>
-      <Trans>Hi people</Trans>
+      <Trans>SEARCH__TITLE</Trans>
     </h1>
 
     <ArchitectList />

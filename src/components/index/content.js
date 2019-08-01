@@ -5,13 +5,14 @@ import Team from './team/team';
 import Container from '@material-ui/core/Container';
 import './content.css';
 
+
 const Content = () => {
     return (
-            <Container maxWidth="md">
-                <Description />
-                <AuthorOfTheDay />
-                <Team />
-            </Container>           
+        <Container maxWidth="md">
+            <Description />
+            <AuthorOfTheDay />
+            <Team />
+        </Container>
     )
 }
 
