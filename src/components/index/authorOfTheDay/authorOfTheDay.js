@@ -52,14 +52,14 @@ const authorOfTheDay = ({ i18n }) => {
         .randomData('name');
 
     console.log(architectDataFiltered);
-
+    1111
     return (
         <Container>
             <div className="authorOfTheDay">
                 <Typography variant="h5" className="authorOfTheDay-title">
                     {i18n.t`MAIN__AUTOR-OF-THE-DAY--TITLE`}
                 </Typography>
-                <div className="authorOfTheDay-block">
+                {/* <div className="authorOfTheDay-block">
                     <Typography variant="h6" className='authorOfTheDay-initials'>
                         {architectDataFiltered.name}
                     </Typography>
@@ -71,13 +71,13 @@ const authorOfTheDay = ({ i18n }) => {
                     </Typography>
                     <Typography variant="body2" className="authorOfTheDay-btn">
                         <Button variant="contained" color="default">
-                            {/* <Link to={'/user/' + architectDataFiltered.path} style={linkStyle}>
+                            <Link to={'/user/' + architectDataFiltered.path} style={linkStyle}>
                                 {i18n.t`MAIN__AUTOR-OF-THE-DAY--BUTTON`}
-                            </Link> */}
+                            </Link>
                         </Button>
                     </Typography>
                     <img alt={architectDataFiltered.name} src={architectDataFiltered.tmp.file.url} className="authorOfTheDay-portrait" />
-                </div>
+                </div> */}
             </div>
         </Container>
     )
