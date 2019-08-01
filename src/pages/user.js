@@ -4,6 +4,7 @@ import { Trans } from '@lingui/react';
 import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 
 import Layout from '../components/layout';
+import MapComponent from '../components/MapComponent'
 import Description from '../components/architectPage/description';
 import Timeline from '../components/architectPage/timeline';
 import Gallery from '../components/architectPage/gallery/slider';
@@ -17,6 +18,7 @@ const ArchitectPage = () => (
     <Gallery />
     <Gallery2 />
     <Video />
+   <MapComponent/>
   </Layout>
 );
 
