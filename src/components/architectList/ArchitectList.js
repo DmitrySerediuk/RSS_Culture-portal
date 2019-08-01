@@ -18,46 +18,48 @@ const useStyles = makeStyles(theme => ({
 export default function ArchitectList() {
 	const classes = useStyles();
 	const [names] = useState([
-		'Иван Ургант',
-		'Гарик Варламов',
-		'Билл Мюррей',
-		'Милл Бюррей',
-		'Серега',
-		'Васёк'
-	]
-	);
-	// Object for input [
-	// 	{
-	// 		name: 'Name Surname',
-	// 		bitrhPlace: 'City'
-	// 	},
-	// 	{
-	// 		...
-	// 	}
-	// ]
-
-
-	const [searchValue, setSearchValue] = useState('');
-
-	const filterName = (items, filterValue) => {
-		if (filterValue.lenght === 0) {
+		{
+			name: 'Иван Ургант',
+			bitrhPlace: 'Минск'
+		},
+		{
+			name: 'Гарик Варламов',
+			bitrhPlace: 'Киев'
+		},
+		{
+			name: 'Билл Мюррей',
+			bitrhPlace: 'Минск'
+		},
+		{
+			name: 'Милл Бюррей',
+			bitrhPlace: 'Киев'
+		},
+		{
+			name: 'Серега Васек',
+			bitrhPlace: 'Москва'
+		}
+	]);
+	const [searchProps, setSearchProps] = useState(['','name']);
+	const [searchValue,searchBy] = searchProps;
+	const filterName = (items, searchValue) => {
+		if (searchValue.lenght === 0) {
 			return items
 		}
 		return items.filter(item => {
-			if (item.toLowerCase().includes(filterValue.toLowerCase())) {
+			if (item[searchBy].toLowerCase().includes(searchValue.toLowerCase())) {
 				return item
 			}
 		})
 	}
 
-	const changeListFilterValue = (value) => {
-		setSearchValue(value)
+	const changeListFilterValue = (newSearchProps) => {
+		setSearchProps(newSearchProps)
 	}
 
 	const renderNameList = filterName(names, searchValue);
-	const namesList = renderNameList.map(item => {
+	const namesList = renderNameList.map((item,index) => {
 		return (
-			<ArchitectItem name={item} />
+			<ArchitectItem data={item} key={index}/>
 		)
 	})
 	return (
