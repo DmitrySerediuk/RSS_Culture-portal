@@ -14,8 +14,8 @@ import { Link } from '@material-ui/core'
 const useStyles = makeStyles(theme => ({
     root: {
       position: 'fixed',
-      top:'10%',
-      left: '95%',
+      top:'11%',
+      left: '94%',
       width: '100%',
       maxWidth: 360,
       backgroundColor: 'rgba(0,0,0,0)',
@@ -24,8 +24,14 @@ const useStyles = makeStyles(theme => ({
     icon: {
        width: '1.5em',
        height: '1.5em',
-       color: '#237ad7'
-    }
+       color: '#237ad7',
+       '&:hover' : {
+         width: '1.7em',
+         height: '1.7em',
+         color: '#a0cdfe',
+       }
+    },
+    focused: {}
   }));
 
   
