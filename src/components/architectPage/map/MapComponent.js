@@ -56,7 +56,7 @@ export default function MapComponent() {
     const { marker } = state;
 
     return (
-        <Box>
+        <Box  id={'map'}>
             <Box>
                 <Paper className={classes.title}>
                     <Typography variant="h5" component="h3">

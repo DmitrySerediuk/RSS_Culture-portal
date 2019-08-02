@@ -7,6 +7,7 @@ import Works from './works/works';
 import Video from './video/videoContainer';
 import Gallery from './gallery/slider';
 import Map from './map';
+import Navigation from './pageNavigation/NavigationComponent';
 import { withI18n } from '@lingui/react';
 
 const Content = (props) => {
@@ -15,6 +16,7 @@ const Content = (props) => {
 
     return (
         <Fragment>
+            <Navigation />
             <Architect
                 src={imageSrc}
                 initials={initials}

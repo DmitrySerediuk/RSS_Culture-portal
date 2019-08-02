@@ -53,7 +53,7 @@ const Gallery = () => {
     ]
 
     return (
-        <Container maxWidth="md" className={classes.containerMain}>
+        <Container maxWidth="md" className={classes.containerMain}  id={'gallery'}>
             <Container className={classes.containerNested}>
                 <Typography variant="h3" gutterBottom className={classes.title}>
                     Gallery

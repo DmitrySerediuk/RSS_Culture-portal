@@ -17,7 +17,7 @@ export default function Architector(props) {
     
     const classes = useStyles();
     return (
-      <Container maxWidth="md">
+      <Container maxWidth="md" id={'description'}>
         <Avatar alt={fullName} src={imageUrl} className={classes.bigAvatar} />
         <Typography align='center' variant='h4'>{fullName}</Typography>
         <Typography align='center' variant='h5'>({yearsOfLife})</Typography>

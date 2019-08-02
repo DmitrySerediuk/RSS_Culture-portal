@@ -51,7 +51,7 @@ const TimeLine = (props) => {
         )
     });
     return (
-        <Container maxWidth="md" className={classes.container}>
+        <Container maxWidth="md" className={classes.container}  id={'timeline'}>
             <Typography variant="h3" className={classes.title}>
                Timeline
             </Typography>
