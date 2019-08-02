@@ -15,8 +15,13 @@ const useStyles = makeStyles(theme => ({
     paragraph: {
         margin: '1rem 0',
         textIndent: '2rem',
-        textAlign: 'justify'
+        textAlign: 'justify',
+        ['@media (max-width:768px)']: {
+            textAlign: 'center',
+            textIndent: '0',
+        }
     },
+
 }));
 
 const Description = ({ i18n }) => {

@@ -21,10 +21,13 @@ const useStyles = makeStyles(theme => ({
 
 const ArchitectSingle = ({ i18n, path }) => {
   const classes = useStyles();
+  // "https://grnkvch.github.io/CodeJam-Culture-Portal/static/baklanov-e8c0f280f4b86d29526072e70c9ee431.jpg",
+  // 'https://thereader.com/wp-content/uploads/2019/02/Doyle.jpg'
   const data = [
     {
       imageSrc: "https://grnkvch.github.io/CodeJam-Culture-Portal/static/baklanov-e8c0f280f4b86d29526072e70c9ee431.jpg",
-      initials: 'Mikhail Ivanovich Baklanov',
+      
+      initials: 'Baklanov Mikhail Ivanovich',
       yearsOfLife: 'January 30 (February 12) 1914 - January 23, 1990',
       desc: 'Belarusian Soviet architect. Honored Architect of the Belorussian SSR (1969)',
       works: [
@@ -87,9 +90,6 @@ const ArchitectSingle = ({ i18n, path }) => {
           birthPlace
           description
           lang
-          map {
-            map
-          }
           name
           path
           photo {

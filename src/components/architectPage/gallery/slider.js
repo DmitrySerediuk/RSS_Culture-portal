@@ -22,7 +22,10 @@ const useStyles = makeStyles({
         width: '70%',
         borderRadius: '10px',
         margin: '0 auto',
-        boxShadow: '0px 0px 30px #000000'
+        boxShadow: '0px 0px 30px #000000',
+        ['@media (max-width: 490px)']: {
+            width: '85%'
+        }
     }
 
 });
