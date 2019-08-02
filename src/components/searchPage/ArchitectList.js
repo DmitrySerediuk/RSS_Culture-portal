@@ -30,7 +30,7 @@ const ArchitectList = ({ i18n }) => {
 						 lang
 						 name
 						 path
-						 tmp {
+						 photo {
 							 file {
 								 url
 							 }

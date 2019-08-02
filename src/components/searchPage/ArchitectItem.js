@@ -6,13 +6,13 @@ import Avatar from '@material-ui/core/Avatar';
 import { Link } from '@wapps/gatsby-plugin-lingui';
 
 export default function ArchitectItem({ data }) {
-    const { name, birthPlace, tmp, path } = data;
+    const { name, birthPlace, photo, path } = data;
 
     return (
         <Link to={'/user/' + path}>
             <ListItem button>
                 <ListItemAvatar>
-                    <Avatar alt={name} src={tmp.file.url} />
+                    <Avatar alt={name} src={photo.file.url} />
                 </ListItemAvatar>
                 <ListItemText
                     primary={name}

@@ -81,28 +81,37 @@ const ArchitectSingle = ({ i18n, path }) => {
 
   const queryArch = graphql`
     query {
-        allContentfulArchitects {
-             nodes {
-               birthDate
-               birthPlace
-               description
-               lang
-               name
-               path
-               timeline {
-                 timeline
-               }
-               mapData {
-                 map
-               }
-               video
-               tmp {
-                 file {
-                   url
-                 }
-               }
-             }
-           }
+      allContentfulArchitects {
+        nodes {
+          birthDate
+          birthPlace
+          description
+          lang
+          map {
+            map
+          }
+          name
+          path
+          photo {
+            file {
+              url
+            }
+          }
+          timeline {
+            timeline
+          }
+          video
+          works {
+            works
+          }
+          gallery {
+            file {
+              fileName
+              url
+            }
+          }
+        }
+      }
          }
      `;
 
@@ -114,6 +123,8 @@ const ArchitectSingle = ({ i18n, path }) => {
     .unique('name');
 
   console.log(architectDataFiltered);
+
+
 
   // const descriptionData = {
   //  fullName: architectDataFiltered.data[0].name,

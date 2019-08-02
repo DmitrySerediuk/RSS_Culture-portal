@@ -19,5 +19,6 @@
   "USER__YOUTUBE": "Youtube",
   "USER__YOUTUBE--BUTTON": "View",
   "USER__YOUTUBE--MAP": "Map",
-  "USER__YOUTUBE--GALLERY": "Gallery"
+  "USER__YOUTUBE--GALLERY": "Gallery",
+  "USER__BUTTON--GO-HOME": "Go back to homepage"
 }

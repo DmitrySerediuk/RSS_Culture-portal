@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     },
     container: {
         display: 'flex',
-        ['@media (max-width: 768px)']: { 
+        ['@media (max-width: 768px)']: {
             flexDirection: 'column',
             textAlign: 'center'
         }
@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     item: {
         padding: '10px 20px',
         margin: '10px 0',
-        ['@media (max-width: 768px)']: { 
+        ['@media (max-width: 768px)']: {
             margin: '0'
         }
     },
@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
         justifyContent: 'center',
         alignItems: 'center',
         padding: '1rem',
-        ['@media (max-width: 768px)']: { 
+        ['@media (max-width: 768px)']: {
             order: -1
         }
     }
@@ -67,18 +67,11 @@ const architectorOfTheDay = ({ i18n }) => {
                   lang
                   name
                   path
-                  timeline {
-                    timeline
-                  }
-                  mapData {
-                    map
-                  }
-                  video
-                  tmp {
+                  photo {
                     file {
-                      url
+                        url
                     }
-                  }
+                }
                 }
               }
             }
@@ -91,39 +84,39 @@ const architectorOfTheDay = ({ i18n }) => {
 
     console.log(architectDataFiltered);
     const classes = useStyles();
-    
+
     return (
-        <Container className={classes.architectOfTheDay}>               
-            <Typography  variant="h5" className={classes.title}> 
+        <Container className={classes.architectOfTheDay}>
+            <Typography variant="h5" className={classes.title}>
                 {i18n.t`MAIN__AUTOR-OF-THE-DAY--TITLE`}
-            </Typography>             
+            </Typography>
             <Grid container className={classes.container}>
                 <Grid item className={classes.infoWrapper}>
                     <Grid item className={classes.item}>
-                        <Typography  variant="h6">
+                        <Typography variant="h6">
                             {architectDataFiltered.name}
                         </Typography>
                     </Grid>
                     <Grid item className={classes.item}>
-                        <Typography  variant="body1">
-                        {architectDataFiltered.birthDate}
+                        <Typography variant="body1">
+                            {architectDataFiltered.birthDate}
                         </Typography>
                     </Grid>
                     <Grid item className={classes.item}>
-                        <Typography  variant="body2">
-                        {architectDataFiltered.description}
+                        <Typography variant="body2">
+                            {architectDataFiltered.description}
                         </Typography>
                     </Grid>
-                    <Grid item  className={classes.item}>
+                    <Grid item className={classes.item}>
                         <Button variant="contained" color="default">
-                            <Link to='/user' className={classes.link}>
+                            <Link to={'/user/' + architectDataFiltered.path} className={classes.link}>
                                 {i18n.t`MAIN__AUTOR-OF-THE-DAY--BUTTON`}
                             </Link>
                         </Button>
                     </Grid>
-                </Grid>                    
+                </Grid>
                 <Grid item className={classes.architectImageWrapper}>
-                    <img alt={architectDataFiltered.name} src={architectDataFiltered.tmp.file.url} style={{width: '150px'}} />
+                    <img alt={architectDataFiltered.name} src={architectDataFiltered.photo.file.url} style={{ width: '150px' }} />
                 </Grid>
             </Grid>
         </Container>

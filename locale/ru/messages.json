@@ -19,5 +19,6 @@
   "USER__YOUTUBE": "Youtube",
   "USER__YOUTUBE--BUTTON": "Смотреть видео",
   "USER__YOUTUBE--MAP": "Карта",
-  "USER__YOUTUBE--GALLERY": "Галерея"
+  "USER__YOUTUBE--GALLERY": "Галерея",
+  "USER__BUTTON--GO-HOME": "На главную"
 }
