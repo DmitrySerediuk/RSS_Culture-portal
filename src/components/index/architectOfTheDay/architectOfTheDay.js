@@ -3,6 +3,9 @@ import { Link } from '@wapps/gatsby-plugin-lingui';
 import { Container, Typography, Grid, Button } from '@material-ui/core';
 import { withI18n } from '@lingui/react';
 import { makeStyles } from '@material-ui/core/styles';
+import { useStaticQuery, graphql } from 'gatsby';
+
+import dataFilter from '../../dataFilter';
 
 const useStyles = makeStyles(theme => ({
     architectOfTheDay: {
@@ -52,8 +55,43 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-const architectOfTheDay = ({ i18n }) => {
+const architectorOfTheDay = ({ i18n }) => {
+
+    const query = graphql`
+       query {
+           allContentfulArchitects {
+                nodes {
+                  birthDate
+                  birthPlace
+                  description
+                  lang
+                  name
+                  path
+                  timeline {
+                    timeline
+                  }
+                  mapData {
+                    map
+                  }
+                  video
+                  tmp {
+                    file {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+        `;
+    const architectDataFull = useStaticQuery(query);
+    const architectDataFiltered = new dataFilter(architectDataFull.allContentfulArchitects.nodes)
+        .filterByField({ lang: i18n._language })
+        .unique('name')
+        .randomData('name');
+
+    console.log(architectDataFiltered);
     const classes = useStyles();
+    
     return (
         <Container className={classes.architectOfTheDay}>               
             <Typography  variant="h5" className={classes.title}> 
@@ -63,17 +101,17 @@ const architectOfTheDay = ({ i18n }) => {
                 <Grid item className={classes.infoWrapper}>
                     <Grid item className={classes.item}>
                         <Typography  variant="h6">
-                            Mikhail Ivanovich Baklanov
+                            {architectDataFiltered.name}
                         </Typography>
                     </Grid>
                     <Grid item className={classes.item}>
                         <Typography  variant="body1">
-                            January 30 (February 12) 1914 - January 23, 1990
+                        {architectDataFiltered.birthDate}
                         </Typography>
                     </Grid>
                     <Grid item className={classes.item}>
                         <Typography  variant="body2">
-                            Belarusian Soviet architect. Honored Architect of the Belorussian SSR (1969).
+                        {architectDataFiltered.description}
                         </Typography>
                     </Grid>
                     <Grid item  className={classes.item}>
@@ -85,11 +123,11 @@ const architectOfTheDay = ({ i18n }) => {
                     </Grid>
                 </Grid>                    
                 <Grid item className={classes.architectImageWrapper}>
-                    <img alt="architect" src={`https://grnkvch.github.io/CodeJam-Culture-Portal/static/baklanov-e8c0f280f4b86d29526072e70c9ee431.jpg`} style={{width: '150px'}} />
+                    <img alt={architectDataFiltered.name} src={architectDataFiltered.tmp.file.url} style={{width: '150px'}} />
                 </Grid>
             </Grid>
         </Container>
     )
 }
 
-export default withI18n()(architectOfTheDay);
+export default withI18n()(architectorOfTheDay);
