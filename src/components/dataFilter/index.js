@@ -5,7 +5,7 @@ export default class DataFilter {
     this.data = data;
   }
 
-  filterByLang(searchRow) {
+  filterByField(searchRow) {
     const searchKey = Object.keys(searchRow)[0];
     const searchValue = searchRow[searchKey];
     this.data = this.data.filter((value) => {

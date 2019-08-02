@@ -2,8 +2,6 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPlayer from 'react-player';
 
-
-
 const useStyles = makeStyles({
   playerWrapper: {
     position: 'relative',
@@ -18,17 +16,18 @@ const useStyles = makeStyles({
 
 });
 
-export default function VideoPlayer() {
+export default function VideoPlayer(props) {
 const classes = useStyles();
+const {url} = props;
     return (
     	<div className={classes.playerWrapper}>
         <ReactPlayer
-          url='https://www.youtube.com/watch?time_continue=6&v=6mUgWtHkQFY'
+          url={url}
           className={classes.reactPlayer}
-          controls = 'true'
-          playing
+          playing={true}
           width='100%'
           height='100%'
+          controls={true}
         />
       </div>
     )

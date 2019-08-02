@@ -1,18 +1,19 @@
 import { graphql } from 'gatsby';
 import { withLingui } from '@wapps/gatsby-plugin-lingui';
 
-import Content from '../components/index/content';
+import StartPage from '../components/index';
 import 'normalize.css';
 
 import Layout from '../components/layout';
 import React, { Component } from 'react';
+import 'typeface-roboto';
 
 class indexPage extends Component {
-  
+
   render() {
     return (
       <Layout>
-        <Content />
+        <StartPage  />
       </Layout>
     )
   };

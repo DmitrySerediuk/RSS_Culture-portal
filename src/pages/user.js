@@ -1,26 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Trans } from '@lingui/react';
-import { Link, withLingui } from '@wapps/gatsby-plugin-lingui';
 
 import Layout from '../components/layout';
-import MapComponent from '../components/MapComponent'
-import Description from '../components/architectPage/description';
-import Timeline from '../components/architectPage/timeline';
-import Gallery from '../components/architectPage/gallery/slider';
-import Gallery2 from '../components/architectPage/gallery2';
-import Video from '../components/architectPage/video/videoContainer';
+import { withLingui } from '@wapps/gatsby-plugin-lingui';
 
-const ArchitectPage = () => (
-  <Layout>
-    <Description />
-    <Timeline />
-    <Gallery />
-    <Gallery2 />
-    <Video />
-   <MapComponent/>
-  </Layout>
-);
+import ArchitectSingle from '../components/architectPage';
+
+const ArchitectPage = (...args) => {
+  return (
+    <Layout>
+      <ArchitectSingle path={args[0].path} />
+    </Layout>
+  )
+};
 
 export default withLingui()(ArchitectPage);
 
