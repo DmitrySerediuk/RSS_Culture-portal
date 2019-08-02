@@ -1,68 +1,75 @@
 import React, { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
-
 import TextField from '@material-ui/core/TextField';
-import { Search } from '@material-ui/icons';
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import DirectionsIcon from '@material-ui/icons/Directions';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import Box from '@material-ui/core/Box';
+import { withI18n } from '@lingui/react';
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        padding: '2px 4px',
-        display: 'flex',
-        alignItems: 'center',
-        width: '90%',
-        margin: '0px auto',
-        backgroundColor: '#dddddd'
-      },
-      input: {
-        marginLeft: 8,
-        flex: 1,
-      },
-      iconButton: {
-        padding: 10,
-      },
-      divider: {
-        width: 1,
-        height: 28,
-        margin: 4,
-      },
+  searchInput: {
+    width: '80%',
+  },
+  selector: {
+    width: '20%'
+  }
 }));
-export default function ArchitectItem({changeListFilterValue}) {
-    const classes = useStyles();
-    const [state, setState] = useState('')
-    const onChangeSearchInput = (e) =>{
-        const {value} = e.target;
-        setState(value);
-        changeListFilterValue(value);
+
+const SearchInput = ({ changeListFilterValue, i18n }) => {
+  console.log(changeListFilterValue, changeListFilterValue.toString());
+  const classes = useStyles();
+  const [searchValue, setSearchValue] = useState('');
+  const [searchBy, setSearchBy] = useState('name');
+  const [searchOptions] = useState([
+    {
+      title: i18n.t`SEARCH__TYPE--NAME`,
+      value: 'name'
+    },
+    {
+      title: i18n.t`SEARCH__TYPE--CITY`,
+      value: 'birthPlace'
     }
+  ]);
+
+  const menuItemList = searchOptions.map(option => {
+    const { title, value } = option
     return (
-            // <TextField
-            //     className={classes.searchInput}
-            //     variant="filled"
-            //     placeholder="Введите имя или фамилию"
-            //     type="search"
-            //     onChange={onChangeSearchInput}
-            // />
-            <Paper className={classes.root}>
-                <IconButton className={classes.iconButton} aria-label="menu">
-                    <MenuIcon />
-                </IconButton>
-                <InputBase
-                    className={classes.input}
-                    type="search"
-                    placeholder="Введите имя или фамилию"
-                    inputProps={{ 'aria-label': 'search google maps' }}
-                    onChange={onChangeSearchInput}
-                />
-                <IconButton className={classes.iconButton} aria-label="search">
-                    <SearchIcon />
-                </IconButton>
-            </Paper>
+      <MenuItem
+        key={value}
+        value={value}
+      >
+        {title}
+      </MenuItem>
     )
+  })
+  const onChangeSearchInput = (e) => {
+    const { value } = e.target
+    setSearchValue(value)
+    changeListFilterValue([value, searchBy])
+  }
+  const onChangeSearchOption = (e) => {
+    const { value } = e.target
+    setSearchBy(value)
+    changeListFilterValue([searchValue, value])
+  }
+  return (
+    <Box>
+      <TextField
+        className={classes.searchInput}
+        placeholder={i18n.t`SEARCH__PLACEHOLDER`}
+        type="search"
+        onChange={onChangeSearchInput}
+      />
+      <Select
+        className={classes.selector}
+        value={searchBy}
+        onChange={onChangeSearchOption}
+      >
+        {menuItemList}
+      </Select>
+    </Box>
+
+  )
 }
+
+export default withI18n()(SearchInput);

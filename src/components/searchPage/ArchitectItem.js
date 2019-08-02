@@ -4,19 +4,21 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import { Link } from '@wapps/gatsby-plugin-lingui';
-import { withI18n } from '@lingui/react';
 
-const ArchitectItem = ({ name, path, img }) => {
+export default function ArchitectItem({ data }) {
+    const { name, birthPlace, tmp, path } = data;
+
     return (
-        <ListItem button>
-            <Link to={'/user/' + path}>
+        <Link to={'/user/' + path}>
+            <ListItem button>
                 <ListItemAvatar>
-                    <Avatar alt={name} src={img} />
+                    <Avatar alt={name} src={tmp.file.url} />
                 </ListItemAvatar>
-                <ListItemText primary={name} />
-            </Link>
-        </ListItem>
+                <ListItemText
+                    primary={name}
+                    secondary={birthPlace}
+                />
+            </ListItem>
+        </Link>
     )
 }
-
-export default withI18n()(ArchitectItem);
