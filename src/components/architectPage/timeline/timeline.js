@@ -52,7 +52,7 @@ const TimeLine = (props) => {
         )
     });
     return (
-        <Container maxWidth="md" className={classes.container}>
+        <Container maxWidth="md" className={classes.container}  id={'timeline'}>
             <Typography variant="h3" className={classes.title}>
                 {i18n.t`USER_TIMELINE`}
             </Typography>

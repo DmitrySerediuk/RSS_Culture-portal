@@ -48,7 +48,7 @@ const Works = (props) => {
         )
     });
     return (
-        <Container className={classes.container}>
+        <Container className={classes.container}  id={'works'}>
             <Typography variant="h3" className={classes.title}> 
                 {i18n.t`USER__MASTERPRICE`}
             </ Typography>
