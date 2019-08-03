@@ -9,10 +9,15 @@ import { withI18n } from '@lingui/react';
 const useStyles = makeStyles(theme => ({
   searchInput: {
     width: '80%',
+    background: '#dddddd',
   },
   selector: {
-    width: '20%'
-  }
+    width: '20%',
+    background: '#c4c4c4',
+    boxSizing: 'border-box',
+    paddingLeft: '10px',
+    color: '#333333'
+  },
 }));
 
 const SearchInput = ({ changeListFilterValue, i18n }) => {
@@ -55,6 +60,7 @@ const SearchInput = ({ changeListFilterValue, i18n }) => {
     <Box>
       <TextField
         className={classes.searchInput}
+        inputProps={{style: {paddingLeft: '10px'}}}
         placeholder={i18n.t`SEARCH__PLACEHOLDER`}
         type="search"
         onChange={onChangeSearchInput}

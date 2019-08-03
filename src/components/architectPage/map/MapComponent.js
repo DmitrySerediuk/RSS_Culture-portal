@@ -27,7 +27,8 @@ const useStyles = makeStyles(theme => ({
     title: {
         width: 'fit-content',
         padding: theme.spacing(3, 2),
-        margin: '0 auto 20px'
+        margin: '0 auto 20px',
+        textAlign: 'center'
     },
     // tooltip: {
     //     position: 'relative',

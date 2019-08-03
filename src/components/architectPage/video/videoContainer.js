@@ -23,9 +23,8 @@ const useStyles = makeStyles(theme => ({
     },
     button: {
         position: 'relative',
-        width: '20em',
-        height: '5em',
-        margin: '5% auto',
+        padding: '1rem 3rem',
+        margin: '1rem auto',
         display: 'block',
         boxShadow: '21px 7px 29px -3px rgba(0,0,0,0.74)',
         background: 'linear-gradient(to right, rgba(194, 234, 241, 0.93) 18%, rgba(113, 195, 229, 0.75) 65%, rgba(30, 126, 167, 0.75) 100%)',

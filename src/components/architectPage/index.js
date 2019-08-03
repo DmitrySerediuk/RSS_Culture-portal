@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
 const ArchitectSingle = ({ i18n, path }) => {
   const classes = useStyles();
 
+
   const queryArch = graphql`
     query {
       allContentfulArchitects {

@@ -27,7 +27,7 @@ const Architect = (props) => {
     const { src, initials, yearsOfLife, desc } = props;
     return (
         <Container maxWidth="md" className={classes.container}>
-            <img src={`${src}`}/>
+            <img src={`${src}`} width='200'/>
             <Typography variant="h2" className={classes.initials}>
                 {initials}
             </Typography>
