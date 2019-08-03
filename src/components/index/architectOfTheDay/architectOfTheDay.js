@@ -30,7 +30,10 @@ const useStyles = makeStyles(theme => ({
         padding: '10px 20px',
         backgroundColor: '#263545',
         textTransform: 'capitalize',
-        color: '#ffffff'
+        color: '#ffffff',
+        ['@media (max-width: 490px)']: {
+            textAlign: 'center'
+        }
     },
     item: {
         padding: '10px 20px',
@@ -82,7 +85,6 @@ const architectorOfTheDay = ({ i18n }) => {
         .unique('name')
         .randomData('name');
 
-    console.log(architectDataFiltered);
     const classes = useStyles();
 
     return (
@@ -116,7 +118,7 @@ const architectorOfTheDay = ({ i18n }) => {
                     </Grid>
                 </Grid>
                 <Grid item className={classes.architectImageWrapper}>
-                    <img alt={architectDataFiltered.name} src={architectDataFiltered.photo.file.url} style={{ width: '150px' }} />
+                    <img alt={architectDataFiltered.name} src={architectDataFiltered.photo.file.url} width="150" />
                 </Grid>
             </Grid>
         </Container>

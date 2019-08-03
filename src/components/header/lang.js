@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Language } from '@wapps/gatsby-plugin-lingui';
 import { Select, MenuItem } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -18,10 +18,10 @@ const useStyles = makeStyles(theme => ({
 const Switcher = ({ changeLng, lng, availableLngs }) => {
     const classes = useStyles();
     return (
-            <Select variant="filled" value={lng} onChange={(event) => changeLng(event.target.value)} className={classes.chooseLang}>
-                {availableLngs.map(value => (
-                    <MenuItem key={value} value={value} selected={value === lng}>{value}</MenuItem>
-                ))};
+        <Select variant="filled" value={lng} onChange={(event) => changeLng(event.target.value)} className={classes.chooseLang}>
+            {availableLngs.map(value => (
+                <MenuItem key={value} value={value} selected={value === lng}>{value}</MenuItem>
+            ))};
             </Select>
     );
 }

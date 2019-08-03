@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const useStyles = makeStyles(theme => ({
 	root: {
-		width: '90%',
+		width: '80%',
 		maxWidth: 1000,
 		backgroundColor: theme.palette.background.paper,
 		margin: 'auto'
@@ -45,7 +45,6 @@ const ArchitectList = ({ i18n }) => {
 		.filterByField({ lang: i18n._language })
 		.unique('name');
 
-	console.log(architectDataFiltered.data);
 
 	const [names] = useState(architectDataFiltered.data);
 
@@ -74,8 +73,7 @@ const ArchitectList = ({ i18n }) => {
 	})
 	return (
 		<List className={classes.root}>
-			<SearchInput
-				changeListFilterValue={changeListFilterValue} />
+			<SearchInput changeListFilterValue={changeListFilterValue} />
 			{namesList}
 		</List>
 	)

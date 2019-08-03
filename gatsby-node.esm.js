@@ -31,7 +31,7 @@ exports.createPages = async ({ page, actions, graphql }) => {
           path: `/user/${pathUser}`,
           component: indexUserTemplate,
           context: {
-            // multilangData: architectDataFiltered
+            multilangData: pathUser
           }
         })
       });
