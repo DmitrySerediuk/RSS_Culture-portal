@@ -45,7 +45,6 @@ const ArchitectList = ({ i18n }) => {
 		.filterByField({ lang: i18n._language })
 		.unique('name');
 
-	console.log(architectDataFiltered.data);
 
 	const [names] = useState(architectDataFiltered.data);
 

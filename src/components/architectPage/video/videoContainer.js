@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Container from '@material-ui/core/Container';
 import CloseIcon from '@material-ui/icons/Close';
 import VideoPlayer from './videoPlayer';
-
+import { withI18n } from '@lingui/react';
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     title: {
         color: '#4A90E2',
         fontSize: '3em',
-        fontWeight: 'bold', 
+        fontWeight: 'bold',
         margin: 'auto',
         textAlign: 'center'
     },
@@ -45,8 +45,8 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function VideoModal(props) {
-    const {url} = props;
+const VideoModal = (props) => {
+    const { url, i18n } = props;
     const classes = useStyles();
     const [open, setOpen] = useState(false);
 
@@ -61,17 +61,19 @@ export default function VideoModal(props) {
     return (
         <Container maxWidth="md" className={classes.container}>
             <Typography variant="h3" className={classes.title}>
-                YouTube
+                {i18n.t`USER__YOUTUBE`}
             </Typography>
-            <Button className={classes.button} onClick={handleOpen}>Watch The Video</Button>
+            <Button className={classes.button} onClick={handleOpen}>{i18n.t`USER__YOUTUBE--BUTTON`}</Button>
             <Modal open={open} className={classes.videoContainer}>
                 <div className={classes.videoContainer}>
                     <IconButton className={classes.closeButton} onClick={handleClose}>
                         <CloseIcon />
                     </IconButton>
-                    <VideoPlayer url={url} />   
+                    <VideoPlayer url={url} />
                 </div>
             </Modal>
         </Container>
     )
 }
+
+export default withI18n()(VideoModal);

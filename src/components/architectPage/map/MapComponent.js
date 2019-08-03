@@ -37,21 +37,22 @@ const useStyles = makeStyles(theme => ({
     // }
 }));
 
-export default function MapComponent() {
+export default function MapComponent({data}) {
+    console.log(data[0].length);
     const classes = useStyles();
-    const [state, setState] = useState({
+    const [state] = useState({
         marker: {
-            lat: 53.89833,
-            lon: 27.56056,
+            lat: data[0].width,
+            lon: data[0].length,
             imgUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/%D0%A5%D1%83%D0%B4_%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%A0%D0%91.jpg/250px-%D0%A5%D1%83%D0%B4_%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%A0%D0%91.jpg',
-            title: 'Национальный Художественный музей',
+            title: data[0].title,
             toolTip: {
-                balloonContentHeader: 'Национальный Художественный музей',
-                balloonContentBody: 'Адрес: улица Ленина 20',
-                balloonContentFooter: 'Минск, Беларусь'
+                balloonContentHeader: data[0].title,
+                balloonContentBody: '',
+                balloonContentFooter: 'Беларусь'
             }
         },
-        center: [53.89833, 27.56056],
+        center: [data[0].width,data[0].length],
     })
 
     const { marker } = state;
