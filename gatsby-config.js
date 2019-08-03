@@ -7,10 +7,10 @@
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: `ofplwpwsjc9t`,
-        accessToken: `__JOGauoVo5zrBOSVTqNr1mcGHrSFz3sYKLmhzMiDBM`,
+        spaceId: 'ofplwpwsjc9t',
+        accessToken: '__JOGauoVo5zrBOSVTqNr1mcGHrSFz3sYKLmhzMiDBM',
       },
     },
     {
@@ -23,15 +23,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'users',
-        path: `${__dirname}/src/data`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         path: `${__dirname}/locale`,
-        name: `locale`,
+        name: 'locale',
       },
     },
     {
@@ -43,4 +36,4 @@ module.exports = {
       },
     },
   ],
-}
+};

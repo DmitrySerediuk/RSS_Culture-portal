@@ -82,7 +82,6 @@ const architectorOfTheDay = ({ i18n }) => {
         .unique('name')
         .randomData('name');
 
-    console.log(architectDataFiltered);
     const classes = useStyles();
 
     return (

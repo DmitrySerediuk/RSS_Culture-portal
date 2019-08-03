@@ -53,7 +53,7 @@ const Header = (props) => {
     return (
             <Toolbar className={classes.headerWrapper}>
               <Container className={classes.containerLogo}>
-                 <img src={logo}/>
+                 <img src={logo} alt="Main page"/>
                    <Typography variant="h1" className={classes.headerTitle} >
                      <Link to={`/`} className={classes.homeLink}>
                        {i18n.t`HEADER__TITLE`}

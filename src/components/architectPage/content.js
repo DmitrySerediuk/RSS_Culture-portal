@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Button } from '@material-ui/core';
 import { Link } from '@wapps/gatsby-plugin-lingui';
 import Architect from './architect/architect';
@@ -10,22 +10,22 @@ import Map from './map';
 import { withI18n } from '@lingui/react';
 
 const Content = (props) => {
-    const { imageSrc, initials, yearsOfLife, desc, works, url, timeline } = props.data;
+    const { photo, name, birthDate, description, works, video, timeline, map, gallery } = props.data;
     const { i18n } = props;
 
     return (
-        <Fragment>
+        < Fragment >
             <Architect
-                src={imageSrc}
-                initials={initials}
-                yearsOfLife={yearsOfLife}
-                desc={desc}
+                src={photo.file.url}
+                initials={name}
+                yearsOfLife={birthDate}
+                desc={description}
             />
-            <TimeLine timeline={timeline} />
-            <Works works={works} />
-            <Video url={url} />
-            <Gallery />
-            <Map />
+            <TimeLine timeline={JSON.parse(timeline.timeline)} />
+            <Works works={JSON.parse(works.works)} />
+            <Video url={video} />
+            <Gallery data = {gallery}/>
+            <Map data={JSON.parse(map.map)}/>
             <Button variant="contained" color="default" style={{ margin: '30px auto', display: 'block' }}>
                 <Link to="/" style={{ textDecoration: 'none', color: '#222222' }}>
                     {i18n.t`USER__BUTTON--GO-HOME`}

@@ -4,7 +4,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import { Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import './style.css';
-
+import { withI18n } from '@lingui/react';
 
 const useStyles = makeStyles({
     containerMain: {
@@ -27,40 +27,26 @@ const useStyles = makeStyles({
 
 });
 
-const Gallery = () => {
+const Gallery = ({ data, i18n }) => {
+    const images = [];
+    data.forEach(img => {
+        images.push({
+            original: img.file.url,
+            thumbnail: img.file.url,
+        });
+    });
+
     const classes = useStyles();
-    const images = [
-        {
-            original: 'https://cdn12.img.sputnik.by/images//103970/31/1039703179.jpg',
-            thumbnail: 'https://cdn12.img.sputnik.by/images//103970/31/1039703179.jpg',
-        },
-        {
-            original: 'https://img-fotki.yandex.ru/get/5504/101499463.aa/0_e2cce_fdf18de7_XL.jpg',
-            thumbnail: 'https://img-fotki.yandex.ru/get/5504/101499463.aa/0_e2cce_fdf18de7_XL.jpg',
-        },
-        {
-            original: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdjEkOrGJNVZbHw47eGU645I9gEgs4gaue32ui9MnYmtZ9BSjC',
-            thumbnail: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdjEkOrGJNVZbHw47eGU645I9gEgs4gaue32ui9MnYmtZ9BSjC',
-        },
-        {
-            original: 'https://minsktourism.by/wp-content/uploads/16-nats.hud.muzey-2.jpg',
-            thumbnail: 'https://minsktourism.by/wp-content/uploads/16-nats.hud.muzey-2.jpg',
-        },
-        {
-            original: 'https://www.kv.by/sites/default/files/pictures/mainimage/2016/08/1151226-201420-14x124316.jpg',
-            thumbnail: 'https://www.kv.by/sites/default/files/pictures/mainimage/2016/08/1151226-201420-14x124316.jpg',
-        },
-    ]
 
     return (
         <Container maxWidth="md" className={classes.containerMain}>
             <Container className={classes.containerNested}>
                 <Typography variant="h3" gutterBottom className={classes.title}>
-                    Gallery
-                    </Typography>
+                    {i18n.t`USER__YOUTUBE--GALLERY`}
+                </Typography>
                 <ImageGallery items={images} showBullets={true} />
             </Container>
         </Container>
     )
 }
-export default Gallery
+export default withI18n()(Gallery);
