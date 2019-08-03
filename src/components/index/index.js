@@ -8,7 +8,10 @@ const useStyles = makeStyles(theme => ({
         backgroundColor:'#ffffff',
         margin: 'auto', 
         width: '85%', 
-        minHeight: '100vh'
+        minHeight: '100vh',
+        ['@media (max-width: 490px)']: {
+            width: '90%'
+        }
     }
 }));
 const StartPage = () => {

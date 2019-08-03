@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     title: {
         textAlign: 'center',
         color: '#4A90E2',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
     yearTitle: {
         color: '#4A90E2',
