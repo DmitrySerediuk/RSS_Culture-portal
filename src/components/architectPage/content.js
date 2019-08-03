@@ -15,6 +15,7 @@ const Content = (props) => {
     const { i18n } = props;
 
     return (
+        <Fragment>
             <Navigation />
             <Architect
                 src={photo.file.url}

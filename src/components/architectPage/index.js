@@ -69,17 +69,10 @@ const ArchitectSingle = ({ i18n, path }) => {
 
 
   if (architectDataFiltered === undefined) return false;
-  // console.log(architectDataFiltered.timeline.timeline);
-  // console.log(JSON.parse(architectDataFiltered.timeline.timeline), 'time');
-  // console.log(JSON.parse(architectDataFiltered.map.map),'map');
-  // console.log(JSON.parse(architectDataFiltered.works.works),'works');
-
-
 
   return (
     <Container maxWidth="md" className={classes.container}>
       <Content data={architectDataFiltered} />
-      {/* <Content data={data[0]} /> */}
     </Container>
   )
 }

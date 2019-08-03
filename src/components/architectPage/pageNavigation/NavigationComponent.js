@@ -41,9 +41,9 @@ const useStyles = makeStyles(theme => ({
     return (
       <div className={classes.root}>
         <List component="nav" aria-label="main mailbox folders">
-          <ListItem button>
+          {/* <ListItem button>
               <HomeIcon className={classes.icon} />
-          </ListItem>
+          </ListItem> */}
           <ListItem button>
           <Link href='#timeline'>
               <EventIcon className={classes.icon} />
