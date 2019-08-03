@@ -1,7 +1,8 @@
 import React from 'react';
-import {Container, Typography} from '@material-ui/core';
-import { Timeline, TimelineItem }  from 'vertical-timeline-component-for-react';
+import { Container, Typography } from '@material-ui/core';
+import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
 import { makeStyles } from '@material-ui/core/styles';
+import { withI18n } from '@lingui/react';
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -16,19 +17,19 @@ const useStyles = makeStyles(theme => ({
     yearTitle: {
         color: '#4A90E2',
         fontWeight: 'bold'
-    } 
+    }
 }));
 
 const TimeLine = (props) => {
     const classes = useStyles();
-    const { timeline } = props;
+    const { timeline, i18n } = props;
     const biography = timeline.map((activity, index) => {
-        const { year, desc } = activity;
+        const { date, text } = activity;
         return (
-            <TimelineItem 
+            <TimelineItem
                 key={index}
-                dateText={year}
-                dateInnerStyle={{ 
+                dateText={date}
+                dateInnerStyle={{
                     background: '#4A90E2',
                     fontSize: '1.25rem',
                     fontFamily: 'Roboto',
@@ -41,11 +42,11 @@ const TimeLine = (props) => {
                     boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
                 }}
             >
-                <Typography variant="h5" component="h5" className={classes.yearTitle}> 
-                    {year}
+                <Typography variant="h5" component="h5" className={classes.yearTitle}>
+                    {date}
                 </Typography>
                 <Typography variant="body1" component="p">
-                    {desc}
+                    {text}
                 </Typography>
             </TimelineItem>
         )
@@ -53,7 +54,7 @@ const TimeLine = (props) => {
     return (
         <Container maxWidth="md" className={classes.container}>
             <Typography variant="h3" className={classes.title}>
-               Timeline
+                {i18n.t`USER_TIMELINE`}
             </Typography>
             <Timeline lineColor={'#ddd'}>
                 {biography}
@@ -61,4 +62,4 @@ const TimeLine = (props) => {
         </Container>
     )
 }
-export default TimeLine;
+export default withI18n()(TimeLine);

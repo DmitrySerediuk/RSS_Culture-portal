@@ -16,7 +16,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SearchInput = ({ changeListFilterValue, i18n }) => {
-  console.log(changeListFilterValue, changeListFilterValue.toString());
   const classes = useStyles();
   const [searchValue, setSearchValue] = useState('');
   const [searchBy, setSearchBy] = useState('name');
