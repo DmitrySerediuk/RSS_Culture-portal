@@ -7,8 +7,7 @@ import DescriptionIcon from '@material-ui/icons/Description';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import CollectionsIcon from '@material-ui/icons/Collections';
 import MapIcon from '@material-ui/icons/Map';
-import { Link } from '@material-ui/core'
-
+import { Link  as ScrolLink } from 'react-scroll';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -47,29 +46,29 @@ const useStyles = makeStyles(theme => ({
       <div className={classes.root}>
         <List component="nav" aria-label="main mailbox folders">
           <ListItem button>
-          <Link href='#timeline'>
-              <EventIcon className={classes.icon} />
-            </Link>
+          <ScrolLink to='timeline' spy={true} smooth={true} duration={500}>
+            <EventIcon className={classes.icon} />
+          </ScrolLink>
           </ListItem>
         <ListItem button>
-        <Link href='#works'>
+        <ScrolLink to='works' spy={true} smooth={true} duration={500}>
               <DescriptionIcon className={classes.icon} />
-            </Link>
+            </ScrolLink>
           </ListItem>
           <ListItem button>
-                <Link href='#video'>
+                <ScrolLink to='video' spy={true} smooth={true} duration={500}>
                  <VideoLibraryIcon className={classes.icon} /> 
-              </Link>
+              </ScrolLink>
           </ListItem>
           <ListItem button>
-          <Link href='#gallery'>
+          <ScrolLink to='gallery' spy={true} smooth={true} duration={500}>
               <CollectionsIcon className={classes.icon} />
-            </Link>
+            </ScrolLink>
           </ListItem>
           <ListItem button>
-          <Link href='#map'>
+          <ScrolLink to='map' spy={true} smooth={true} duration={500}>
               <MapIcon className={classes.icon}/>
-            </Link>
+            </ScrolLink>
           </ListItem>
         </List>
       </div>
