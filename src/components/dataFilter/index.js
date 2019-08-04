@@ -8,10 +8,7 @@ export default class DataFilter {
   filterByField(searchRow) {
     const searchKey = Object.keys(searchRow)[0];
     const searchValue = searchRow[searchKey];
-    this.data = this.data.filter(value => (
-      value.hasOwnProperty(searchKey) && 
-      value[searchKey] === searchValue
-      ));
+    this.data = this.data.filter(value => (value.hasOwnProperty(searchKey) && value[searchKey] === searchValue));
     return this;
   }
 
@@ -21,9 +18,8 @@ export default class DataFilter {
   }
 
   randomData() {
-    let rand = -0.5 + Math.random() * (this.data.length);
-
-    rand = Math.round(rand);
-    return this.data[rand];
+    const now = new Date();
+    const architectIndex = now.getDate() % this.data.length
+    return this.data[architectIndex]
   }
 }
