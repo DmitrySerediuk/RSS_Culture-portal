@@ -5,9 +5,9 @@
 **Worklog**: [https://docs.google.com/spreadsheets/d/1hb5kzRtBicHEYWtCcHcDISuRBSH-YekbarHMx1AfAuw/edit#gid=0](https://docs.google.com/spreadsheets/d/1hb5kzRtBicHEYWtCcHcDISuRBSH-YekbarHMx1AfAuw/edit#gid=0)
 
 
-**Evaluation**
+### Evaluation
 
-Min scope - **40**
+#### Min scope - 40
 
  **10** Main page + page with a list of authors + author's page (only html); **DONE +10 points**
  
@@ -15,7 +15,7 @@ Min scope - **40**
  
  **20** Portal has two languages; **DONE +20 points**
 
-Normal scope - **130**
+#### Normal scope - **130**
 
  **10** Author's page contains timeline;**DONE +10 points**
  
@@ -31,7 +31,7 @@ Normal scope - **130**
  
  **20** material-ui / bootstrap is used **DONE, we used material ui +20 points**
 
- Extra scope - **70**
+ #### Extra scope - **70**
  
  **10** Confidence of the project presentation **DONE +10 points**;
  
