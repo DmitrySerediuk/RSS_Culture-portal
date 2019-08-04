@@ -37,6 +37,7 @@ const Team = ({ i18n }) => {
                 lang
                 photo
                 githubNick
+                contribution
             }
         }
     }
@@ -47,12 +48,13 @@ const Team = ({ i18n }) => {
         .unique('githubNick');
 
     const listOfParticipants = teamDataFiltered.data.map(participant => {
-        const { photo, name, githubNick } = participant;
+        const { photo, name, githubNick,contribution } = participant;
         return <Participant
             key={githubNick}
             image={photo}
             initials={name}
             link={githubNick}
+            contribution={contribution}
         />
     });
 

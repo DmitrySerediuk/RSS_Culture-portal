@@ -27,13 +27,14 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 'bold',
         fontSize: '0.75rem',
         color: '#3c6cee',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        padding: '0, 0.1vw'
     }
 }));
 
 
 const Participant = (props) => {
-    const { image, initials, link } = props;
+    const { image, initials, link, contribution } = props;
     const classes = useStyles();
     const avatarStyles = {
         width: '150px', 
@@ -50,6 +51,9 @@ const Participant = (props) => {
                 <Link variant="body2" href={`https://github.com/${link}`} className={classes.githubLink}>
                     {link}
                 </Link>
+            </Typography>
+            <Typography variant="body2" component="p" className={classes.participantInit}>
+                {contribution}
             </Typography>
         </ListItem>     
     )
