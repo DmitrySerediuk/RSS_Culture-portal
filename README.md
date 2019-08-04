@@ -7,14 +7,16 @@
 
 **Evaluation**
 
-Min scope
+Min scope - **40**
+
  **10** Main page + page with a list of authors + author's page (only html); **DONE +10 points**
  
  **10** Page with list of authors contains search widget; **DONE +10 points**
  
  **20** Portal has two languages; **DONE +20 points**
 
-Normal scope
+Normal scope - **130**
+
  **10** Author's page contains timeline;**DONE +10 points**
  
  **10** Author's page contains video overlay;**DONE +10 points**
@@ -29,14 +31,15 @@ Normal scope
  
  **20** material-ui / bootstrap is used **DONE, we used material ui +20 points**
 
- Extra scope
+ Extra scope - **70**
+ 
  **10** Confidence of the project presentation **DONE +10 points**;
  
  **30** Project is made using gatsbyjs **DONE +30 points**;
  
  **20** contentful / netlify cms is used for content management **DONE, we used contentful +20 points**
  
- 10 Portal has third language;**DONE +10 points**
+ **10** Portal has third language;**DONE +10 points**
 
 
  **TOTAL POINTS  =  240**
