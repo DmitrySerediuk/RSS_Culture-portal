@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { withI18n } from '@lingui/react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+
 import dataFilter from '../dataFilter';
 
 const useStyles = makeStyles(theme => ({
@@ -15,7 +16,10 @@ const useStyles = makeStyles(theme => ({
     width: '85%',
     minHeight: '100vh',
     paddingTop: '24px',
-    paddingBottom: '24px'
+    paddingBottom: '24px',
+    ['@media (max-width: 490px)']: {
+      width: '90%'
+    }
   }
 }));
 

@@ -29,7 +29,11 @@ const useStyles = makeStyles(theme => ({
       color: '#ffffff',
       textTransform: 'uppercase',
       fontSize: '0.75rem',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      transition: 'all 0.3s ease-in-out',
+      '&:hover': {
+        color: '#a0cdfe',
+      }
     },
     icon: {
       margin: theme.spacing(2),

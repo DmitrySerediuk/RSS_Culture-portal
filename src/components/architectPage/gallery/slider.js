@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         fontSize: '3em',
         fontWeight: 'bold',
         margin: 'auto',
-        padding: '20px 0'
+        padding: '20px 0',
     },
     containerNested: {
         width: '70%',
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
         margin: '0 auto',
         boxShadow: '0px 0px 30px #000000',
         ['@media (max-width: 490px)']: {
-            width: '85%'
+            width: '90%'
         }
     }
 

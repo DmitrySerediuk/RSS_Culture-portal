@@ -11,6 +11,9 @@ const useStyles = makeStyles(theme => ({
 		width: '85%',
 		padding: '20px 0', 
 		minHeight: '100vh',
+		['@media (max-width: 490px)']: {
+            width: '90%'
+        }
 	},
 	title: {
 		padding: '20px 0',

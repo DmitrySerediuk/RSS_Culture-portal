@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
         fontSize: '3em',
         fontWeight: 'bold',
         margin: 'auto',
-        textAlign: 'center'
+        textAlign: 'center',
     },
     button: {
         position: 'relative',

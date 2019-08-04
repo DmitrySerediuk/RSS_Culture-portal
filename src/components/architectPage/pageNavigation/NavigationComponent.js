@@ -2,7 +2,6 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { List } from '@material-ui/core';
 import { ListItem } from '@material-ui/core';
-import HomeIcon from '@material-ui/icons/Home';
 import EventIcon from '@material-ui/icons/Event'; 
 import DescriptionIcon from '@material-ui/icons/Description'; 
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
@@ -12,26 +11,32 @@ import { Link } from '@material-ui/core'
 
 
 const useStyles = makeStyles(theme => ({
-    root: {
-      position: 'fixed',
-      top:'11%',
-      left: '94%',
-      width: '100%',
-      maxWidth: 360,
-      backgroundColor: 'rgba(0,0,0,0)',
+  root: {
+    position: 'fixed',
+    top:'15%',
+    right: '3%',
+    width: '100%',
+    maxWidth: '3rem',
+    backgroundColor: 'rgba(0,0,0,0)',
+    ['@media (max-width:1020px)']: {
+      top: '30%',
     },
+    ['@media (max-width:490px)']: {
+      right: '1%',
+    }
+  },
 
-    icon: {
-       width: '1.5em',
-       height: '1.5em',
-       color: '#237ad7',
-       '&:hover' : {
-         width: '1.7em',
-         height: '1.7em',
-         color: '#a0cdfe',
-       }
-    },
-    focused: {}
+  icon: {
+     width: '1.5em',
+     height: '1.5em',
+     color: '#237ad7',
+     transition: 'all 0.3s',
+     '&:hover' : {
+       width: '1.7em',
+       height: '1.7em',
+       color: '#a0cdfe',
+     }
+  }
   }));
 
   
@@ -41,9 +46,6 @@ const useStyles = makeStyles(theme => ({
     return (
       <div className={classes.root}>
         <List component="nav" aria-label="main mailbox folders">
-          {/* <ListItem button>
-              <HomeIcon className={classes.icon} />
-          </ListItem> */}
           <ListItem button>
           <Link href='#timeline'>
               <EventIcon className={classes.icon} />
