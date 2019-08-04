@@ -1,5 +1,7 @@
 **Task link**: [https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-culture-portal.md](https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-culture-portal.md)
+
 **Site**: [http://sochi-rio.ru/](http://sochi-rio.ru/)
+
 **Worklog**: [https://docs.google.com/spreadsheets/d/1hb5kzRtBicHEYWtCcHcDISuRBSH-YekbarHMx1AfAuw/edit#gid=0](https://docs.google.com/spreadsheets/d/1hb5kzRtBicHEYWtCcHcDISuRBSH-YekbarHMx1AfAuw/edit#gid=0)
 
 
