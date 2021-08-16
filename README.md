@@ -5,6 +5,7 @@
 **Worklog**: [https://docs.google.com/spreadsheets/d/1hb5kzRtBicHEYWtCcHcDISuRBSH-YekbarHMx1AfAuw/edit#gid=0](https://docs.google.com/spreadsheets/d/1hb5kzRtBicHEYWtCcHcDISuRBSH-YekbarHMx1AfAuw/edit#gid=0)
 
 
+
 ## Evaluation
 
 ### Min scope - 40
