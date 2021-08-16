@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     years: {
         fontSize: '1.25rem',
         paddingBottom: '10px',
-        color: '#454545' 
+        color: '#454546' 
     },
     desc: {
         fontSize: '1rem' 
