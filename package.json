@@ -19,7 +19,7 @@
     "@wapps/gatsby-plugin-lingui": "^1.1.5",
     "dotenv": "^8.0.0",
     "esm": "^3.2.25",
-    "gatsby": "^2.13.41",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-source-contentful": "^2.1.15",
